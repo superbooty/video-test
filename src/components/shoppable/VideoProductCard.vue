@@ -50,9 +50,7 @@ export default {
   background: white;
   transition: all 1.2s ease-in-out;
   transform-origin: left top;
-  position: absolute;
-  left: 40px;
-  top: 10px;
+  position: relative;
   transform: scale(1);
   max-height: 110px;
 }
