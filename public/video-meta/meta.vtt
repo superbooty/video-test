@@ -1,0 +1,22 @@
+WEBVTT FILE
+
+1
+00:00:05.500 --> 00:00:06.000
+{"products": [{"id": "177800038", "salePrice": 34.99, "color": "black","fit": "men"}]}
+
+2
+00:00:07.000 --> 00:00:08.000
+{"products": [{"id": "188810352", "salePrice": 44.99, "color": "blue", "fit": "women"}]}
+
+3
+00:00:08.000 --> 00:00:10.000
+{"products": [{"id": "227910053", "salePrice": 74.99, "color": "black", "fit": "women"}]}
+
+4
+00:00:13.500 --> 00:00:16.000
+{"products": [{"id": "188810412", "salePrice": 34.99, "color": "black", "fit": "men"}, {"id": "188820233", "salePrice": 74.99, "color": "blue", "fit": "men"}]}
+
+5
+00:00:24.500 --> 00:00:26.000
+{"products": [{"id": "773800036", "salePrice": 98.00, "color": "light blue", "fit": "men"}]}
+

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Interstate-Light";
+    src: url($lsco-font-path+$font-light+".woff") format("woff");
+}
+@font-face {
+    font-family: "Interstate-Regular";
+    src: url($lsco-font-path+$font-medium+".woff") format("woff");
+}
+@font-face {
+    font-family: "Interstate-Bold";
+    src: url($lsco-font-path+$font-bold+".woff") format("woff");
+}
+@font-face {
+  font-family: 'Interstate-Black';
+  src: url($lsco-font-path + $font-black + '.woff') format('woff'),
+      url($lsco-font-path + $font-black + ".woff2") format("woff2");
+}
+@font-face {
+  font-family: 'Interstate-BoldItalic';
+  src: url($lsco-font-path + $font-bold-italic + '.woff') format('woff');
+}
+@font-face {
+    font-family: "Caslon224Std-Book";
+    src: url($lsco-font-path+$font-accent+".woff") format("woff");
+}
+@font-face {
+    font-family: "Caslon224Std-BookItalic";
+    src: url($lsco-font-path+$font-accent-italic+".woff") format("woff");
+}
+@font-face {
+  font-family: "Helvetica-Now-Text-Regular";
+  src: url($lsco-font-path + $helvetica-now + ".woff") format("woff"),
+      url($lsco-font-path + $helvetica-now + ".woff2") format("woff2");
+}
+@font-face {
+  font-family: "Helvetica-Now-Text-Bold";
+  src: url($lsco-font-path + $helvetica-now-bold + ".woff") format("woff"),
+      url($lsco-font-path + $helvetica-now-bold + ".woff2") format("woff2");
+}

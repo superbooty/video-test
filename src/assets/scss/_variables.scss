@@ -1,0 +1,311 @@
+$lsco-font-path: "/fonts/";
+$icon-font: "lsco-icon";
+$font-light: "Interstate-Light";
+$font-medium: "Interstate-Regular";
+$font-bold: "Interstate-Bold";
+$font-bold-italic: "Interstate-BoldItalic";
+$font-black: "Interstate-Black";
+$font-accent: "Caslon224Std-Book";
+$font-accent-italic: "Caslon224Std-BookItalic";
+$helvetica-now: "Helvetica-Now-Text-Regular";
+$helvetica-now-bold: "Helvetica-Now-Text-Bold";
+//************************************************************
+//				Dockers Fonts
+//************************************************************
+$dckrs-font-medium: "AvenirNextLTPro-Medium";
+$dckrs-font-bold: "AvenirNextLTPro-Bold";
+$dckrs-font-regular: "AvenirNextLTPro-Regular";
+//************************************************************
+//				Grid system Container widths
+//************************************************************
+$container-md: 100%;
+//********* Levis Logo *********
+$brand-logo-height: 40px;
+$brand-logo-height--mobile: 37px;
+
+$brand-logo-width: 100px;
+
+$brand-logo-navbar-link: 100px;
+$brand-logo-mobile-height: 0;
+
+$top-nav-margin-top: 0;
+$top-nav-margin-left: 106px;
+$top-nav-padding-left: 33px;
+//************************************************************
+//                       COLORS PALETTE
+//************************************************************
+//********Levi Colors**************
+$transparent: rgba(0, 0, 0, 0);
+$overlay-background: rgba(0, 0, 0, 0.5);
+$red: #c41230;
+$orange: #F25D22;;
+$black: #000000;
+$light-black: #4c4c4c;
+$blue: #0055a3;
+$smalllink-darkblue: #002140;
+$extradark-grey: #444444;
+$dark-grey: #666666;
+$medium-dark-grey: #403E3F;
+$medium-grey: #757575;
+$light-grey: #cccccc;
+$extralight-grey: #dddddd;
+$superlight-grey: #f0f0f0;
+$almost-white: #f9f9f9;
+$white: #ffffff;
+$grayblue: #f2f4f7;
+$light-blue: #4990e2;
+$dark-blue: #1664be;
+$dark-red: #b01c33;
+$gold: #fdb700;
+$dark-gold: #f6a623;
+$green: #009900;
+$dark-green: #1e9e1e;
+$brand: $red;
+$dockers-brand: $orange;
+$levi-brand: $red;
+$pale-grey: #949494;
+$focus-blue: #9ecaed;
+$maroon-red: #b61a33;
+//********* Alerts & Announcement Colors ****/
+$alert-green: #dff0d8;
+$alert-green-border: #d6e0d2;
+$alert-blue: #f0fbfd;
+$alert-blue-border: #dfe6ee;
+$alert-yellow: #fcf8e3;
+$alert-yellow-border: #f2e27d;
+$alert-red: #f2dede;
+$alert-red-border: #e38484;
+$alert-red-border-dark: #e48484;
+$error-red: #fdf5f5;
+$error-red-border: #e78a8a;
+$error-red-bg: #fef6f6;
+$brand-primary: $red;
+$brand-secondary: $black;
+$brand-tertiary: $extralight-grey;
+$gold: #fdb700;
+//*********Typography Colors*********
+$text-color: $black;
+$text-color-secondary: #929292;
+$link-color: $brand-secondary;
+$link-hover-color: #154259;
+$headline-color: $link-hover-color;
+//== Borders
+$border-color: $extralight-grey;
+$border-color-2: $dark-grey;
+$border-color-3: $medium-grey;
+$border-gray: #e9e9e9;
+//*********form colors*********
+$label-color: $black;
+$input-color: $black;
+$input-border-color: $border-color-3;
+$placeholder-color: $medium-grey;
+//** Border color for inputs on focus
+$input-border-focus: $black;
+//** Border color for inputs on error
+$input-error: $error-red-border;
+//** Background color for inputs on error
+$input-error-bg: $error-red-bg;
+//** color for error text
+$input-error-text: $dark-grey;
+$input-error-message: $red;
+$input-error-text-font-size: 14px;
+$input-success: $border-color-3;
+$input-success-bg: transparent;
+$input-success-text: #00a651;
+$input-message: $green;
+//*********Header Background*********
+$header-background-color: $white;
+$nav-border-color: $almost-white;
+//*********Secondary Navigation colors*********
+//Background color for My Account and My Company dropdowns
+$meta-nav-color: #154259;
+$meta-nav-color-open: $white;
+$meta-nav-hover-color: $brand-primary;
+$meta-nav-border-color: $light-grey;
+$meta-nav-background: $white;
+$meta-nav-hover-background: $almost-white;
+//*********Search*********
+$searchbar-icon-color: $black;
+$check-box-bg: $white;
+$search-input-placeholder: rgba(0,0,0,0.4);
+$search-input-border: rgba(0,0,0,0.2);
+//********* icon navigation colors*********
+$nav-icon-color: $black;
+$nav-icon-color-secondary: $brand-primary;
+$nav-icon-hover-background: #f2f2f2;
+//*********Header Navigation-Categories Background*********
+$nav-cat-background: $white;
+$nav-cat-border: $transparent;
+$nav-cat-hover-background: $transparent;
+$nav-cat-link-color: $black;
+$nav-cat-font-size: 13px;
+$nav-subcat-color: $black;
+$nav-subcat-title-color: $transparent;
+$nav-subcat-background: $almost-white;
+$nav-subcat-border-color: $transparent;
+$nav-subcat-hover-background: $transparent;
+//*********Offcanvas navigation colors*********
+$offcanvas-nav-header-color: $white;
+$offcanvas-nav-header-background: $black;
+$offcanvas-nav-disabled: $medium-grey;
+$offcanvas-meta-nav-color: $white;
+$offcanvas-meta-nav-border-color: $meta-nav-border-color;
+$offcanvas-meta-nav-background: $meta-nav-hover-background;
+$offcanvas-meta-nav-background-open: $meta-nav-background;
+$offcanvas-meta-nav-hover-background: $red;
+$offcanvas-nav-cat-color: $text-color;
+$offcanvas-nav-cat-title-color: rgba(0, 0, 0, 0.7);
+$offcanvas-nav-cat-background: #ffffff;
+$offcanvas-nav-cat-border-color: $border-color;
+$offcanvas-nav-cat-hover-background: $border-color;
+//*********Breadcrumbs Colors*********
+$breadcrumb-bg: $white;
+$breadcrumb-color: $medium-grey;
+$breadcrumb-active-color: $dark-grey;
+$breadcrumb-hover-color: $black;
+//*********Footer colors*********
+$footer-background: $superlight-grey;
+$footer-border-color: $transparent;
+$copyright-background: $superlight-grey;
+$copyright-color: $dark-grey;
+//*********Well colors*********
+$well-secondary-bg: lighten($brand-secondary, 47%); //#fef0df;
+$well-quaternary-bg: #f2f2f2;
+//Item colors
+$item-promo-color: $red;
+$item-sale-color: $red;
+$item-sale-price-color: $text-color-secondary;
+//== Tables
+$table-2n-line-bg: $border-color;
+$table-head-bg: #128a9e;
+$table-head-color: $white;
+$table-head-border-color: $nav-border-color;
+$table-border-color: $border-color-2;
+$table-expand-bg: #e4e4e4;
+$cart-product-table-head-color: $table-expand-bg;
+//== List
+$list-active-bg: #f6e7d9;
+//== Pagination
+$pagination-bar-framed: true;
+$pagination-border: transparent;
+$pagination-font-size: 24px;
+$pagination-active-color: $label-color;
+$pagination-active-font-weight: 700;
+$pagination-width-large: 45px;
+$pagination-disabled-color: #a6a6a6;
+$pagination-hover-color: $pagination-active-color;
+// $pagination-prev-next-hover-bg: $pagination-hover-bg;
+$pagination-prev-next-hover-color: $pagination-hover-color;
+//Grid
+$grid_length: 25;
+//*********Button Colors*********
+//Primary Button State
+$btn-primary-color: $white;
+$btn-primary-bg: $brand-primary;
+$btn-primary-border: $brand-primary;
+$btn-primary-hover-color: $brand-primary;
+$btn-primary-hover-border: $brand-primary;
+$btn-primary-hover-background: $white;
+$btn-primary-disabled-bg: $medium-grey;
+//Secondary Button State
+$btn-default-color: $white;
+$btn-default-bg: $black;
+$btn-default-border: $black;
+$btn-default-hover-color: $black;
+$btn-default-hover-border: $black;
+$btn-default-hover-background: $white;
+$btn-default-disabled-bg: $medium-grey;
+//Tertiary Button State
+$btn-tertiary-color: $black;
+$btn-tertiary-bg: $white;
+$btn-tertiary-border: $black;
+$btn-tertiary-hover-color: $black;
+$btn-tertiary-hover-background: $almost-white;
+$btn-tertiary-hover-border: $black;
+$btn-tertiary-disabled-bg: $medium-grey;
+//*********Accordion Colors*********
+$accordion-bg: #000000;
+//*********Carousel Style*********
+$carousel-font-style: normal;
+//*********Modal Colors*********
+$modal-close-btn-color: #797979;
+$modal-backdrop-opacity: 0.4;
+//*********Account Colors*********
+$account-subheadline-bg: #f4f4f4;
+//********* Facet Colors ***************
+$facet-hover-background: #f7f7f7;
+//*********checkout*********
+$steps-color: $black;
+$steps-background: $white;
+$steps-color-active: $black;
+$steps-background-active: $white;
+$steps-border-active: $light-grey;
+$steps-divider: $border-color-2;
+$checkout-icon: $headline-color;
+$checkout-list-head-bg: $white;
+$checkout-list-head-color: $text-color;
+$checkout-list-head-border: $steps-divider;
+$checkout-list-head-padding: 60px 0 10px;
+$checkout-list-head-padding-first: 0;
+//*********Coupon Colors*********
+$coupon-list-item-border: $border-color-3;
+$coupon-list-item-bg: $table-2n-line-bg;
+$coupon-list-item-remove-icon: #cdcdcd;
+//********* PDP Colors ***********
+$sale-color: $brand;
+//********* SEARCH SUGGESTIONS COLORS **********
+$search-sale-price: $brand;
+$default-outline: #212121;
+
+//********* NAV SPACING VARS ***************
+$utility-bar-height: 40;
+$header-height: 64;
+
+//********* SPACING VARS (Multiples of 4) ***************
+$spacing-4: 4px;
+$spacing-8: 8px;
+$spacing-16: 16px;
+$spacing-24: 24px;
+$spacing-32: 32px;
+$spacing-40: 40px;
+$spacing-56: 56px;
+$spacing-64: 64px;
+$spacing-80: 80px;
+$spacing-96: 96px;
+$spacing-120: 120px;
+// spacing-160 is for desktop nav to account for utility bar
+$spacing-160: 160px;
+
+//********* Z-INDEX VARS *********
+$z-1: 100;
+$z-2: 200;
+$z-3: 300;
+$z-4: 400;
+$z-5: 500;
+$z-9: 900;
+$z-10: 1000;
+
+//********* ANIMATION VARS ***************
+$anim-timing-250: 250ms;
+$anim-timing-400: 400ms;
+$anim-timing-600: 600ms;
+$anim-timing-800: 800ms;
+$anim-ease-utility: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+$anim-ease-expressive: cubic-bezier(0.45, 0.05, 0.5, 0.1);
+
+$cta_translate_distance: -2px;
+$translate_distance: 60px;
+$standard_scale: 1.05;
+
+//********* BREAKPOINTS *********
+$device-m: 768px;
+$device-l: 1025px;
+
+//********************************
+// TO DEPRECATE; please use the var pattern above
+$container-max-widths: (
+    sm: 767px,
+    md: 991px,
+    lg: 1200px,
+    xl: 1680px
+);

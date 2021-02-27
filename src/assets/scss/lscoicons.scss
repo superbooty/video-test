@@ -1,0 +1,322 @@
+@font-face {
+  font-family: 'lsco-icon';
+  src:  url('/fonts/LSCO-Icon-Font.eot?qdpi9w');
+  src:  url('/fonts/LSCO-Icon-Font.eot?qdpi9w#iefix') format('embedded-opentype'),
+    url('/fonts/LSCO-Icon-Font.woff2?qdpi9w') format('woff2'),
+    url('/fonts/LSCO-Icon-Font.ttf?qdpi9w') format('truetype'),
+    url('/fonts/LSCO-Icon-Font.woff?qdpi9w') format('woff'),
+    url('/fonts/LSCO-Icon-Font.svg?qdpi9w#LSCO-Icon-Font') format('svg');
+}
+.lsco-icon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'lsco-icon'!important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.lscoicon-arrow-down:before {
+	content: "\e900";
+}
+.lscoicon-arrow-left:before {
+	content: "\e901";
+}
+.lscoicon-arrow-right:before {
+	content: "\e902";
+}
+.lscoicon-arrow-up-right:before {
+	content: "\e903";
+}
+.lscoicon-arrow-up:before {
+	content: "\e904";
+}
+.lscoicon-avatar-active:before {
+	content: "\e905";
+}
+.lscoicon-avatar-default:before {
+	content: "\e906";
+}
+.lscoicon-bell:before {
+	content: "\e907";
+}
+.lscoicon-check-circle:before {
+	content: "\e908";
+}
+.lscoicon-check-circle-solid:before {
+	content: "\e909";
+}
+.lscoicon-check:before {
+	content: "\e90a";
+}
+.lscoicon-chevron-down:before {
+	content: "\e90b";
+}
+.lscoicon-chevron-left:before {
+	content: "\e90c";
+}
+.lscoicon-chevron-right:before {
+	content: "\e90d";
+}
+.lscoicon-chevron-up:before {
+	content: "\e90e";
+}
+.lscoicon-clock:before {
+	content: "\e90f";
+}
+.lscoicon-credit-card:before {
+	content: "\e910";
+}
+.lscoicon-dockers:before {
+	content: "\e911";
+}
+.lscoicon-dots:before {
+	content: "\e912";
+}
+.lscoicon-edit-pencil:before {
+	content: "\e913";
+}
+.lscoicon-envelope:before {
+	content: "\e914";
+}
+.lscoicon-error:before {
+	content: "\e915";
+}
+.lscoicon-facebook:before {
+	content: "\e916";
+}
+.lscoicon-garbage-solid:before {
+	content: "\e917";
+}
+.lscoicon-garbage:before {
+	content: "\e918";
+}
+.lscoicon-hamburger:before {
+	content: "\e919";
+}
+.lscoicon-heart-active:before {
+	content: "\e91a";
+}
+.lscoicon-heart-default:before {
+	content: "\e91b";
+}
+.lscoicon-instagram:before {
+	content: "\e91c";
+}
+.lscoicon-iron:before {
+	content: "\e91d";
+}
+.lscoicon-levis-logo:before {
+	content: "\e91e";
+}
+.lscoicon-location:before {
+	content: "\e91f";
+}
+.lscoicon-lock:before {
+	content: "\e920";
+}
+.lscoicon-minus {
+	&:before {
+		content: "\e921";
+	}
+}
+.lscoicon-pinterest:before {
+	content: "\e922";
+}
+.lscoicon-play:before {
+	content: "\e923";
+}
+.lscoicon-plus {
+	&:before {
+		content: "\e924";
+	}
+}
+.lscoicon-pocket:before {
+	content: "\e925";
+}
+.lscoicon-pricetag-active:before {
+	content: "\e926";
+}
+.lscoicon-pricetag-default:before {
+	content: "\e927";
+}
+.lscoicon-search:before {
+	content: "\e929";
+}
+.lscoicon-shopping-bag:before {
+	content: "\e92a";
+}
+.lscoicon-snapchat:before {
+	content: "\e92b";
+}
+.lscoicon-star-empty:before {
+	content: "\e92c";
+}
+.lscoicon-star-full:before {
+	content: "\e92d";
+}
+.lscoicon-star-half:before {
+	content: "\e92e";
+}
+.lscoicon-swipe-left-chevron:before {
+	content: "\e92f";
+}
+.lscoicon-swipe-right-chevron:before {
+	content: "\e930";
+}
+.lscoicon-tumblr:before {
+	content: "\e932";
+}
+.lscoicon-twitter:before {
+	content: "\e933";
+}
+.lscoicon-unlock:before {
+	content: "\e934";
+}
+.lscoicon-ven-diagram:before {
+	content: "\e935";
+}
+.lscoicon-vk:before {
+	content: "\e936";
+}
+.lscoicon-x:before {
+	content: "\e937";
+}
+.lscoicon-youtube:before {
+	content: "\e938";
+}
+.lscoicon-dockers-no-padding:before {
+	content: "\e939";
+}
+.lscoicon-levis-logo-no-padding:before {
+	content: "\e93a";
+}
+.lscoicon-true-fit-icon:before {
+	content: "\e93b";
+}
+.lscoicon-true-fit-icon-wordmark:before {
+	content: "\e93c";
+}
+.lscoicon-play-thin:before {
+	content: "\e93d";
+}
+.lscoicon-dockers-primary-lockup:before {
+	content: "\e93e";
+}
+.lscoicon-dockers-secondary-lockup:before {
+	content: "\e93f";
+}
+.lscoicon-question-outline:before {
+	content: "\e940";
+}
+.lscoicon-ruler {
+	&:before {
+		content: "\e928";
+	}
+}
+.lscoicon-thread {
+	&:before {
+		content: "\e931";
+	}
+}
+.lscoicon-phone {
+	&:before {
+		content: "\e952";
+	}
+}
+.lscoicon-livechat {
+	&:before {
+		content: "\e953";
+	}
+}
+.lscoicon-check {
+	&:before {
+		content: "\e90a";
+	}
+}
+.lscoicon-radio {
+	&:before {
+		content: "\e955";
+	}
+}
+.lscoicon-visa {
+	&:before {
+		content: "\e945";
+	}
+}
+.lscoicon-discover {
+	&:before {
+		content: "\e946";
+	}
+}
+.lscoicon-master, .lscoicon-mc {
+	&:before {
+		content: "\e947";
+	}
+}
+.lscoicon-amex {
+	&:before {
+		content: "\e948";
+	}
+}
+.lscoicon-maestro {
+	&:before {
+		content: "\e95f";
+	}
+}
+.lscoicon-check {
+	&:before {
+		content: "\e90a";
+	}
+}
+.lscoicon-applepay {
+    &:before {
+        content: "\e94b";
+    }
+}
+.lscoicon-klarna {
+	top: -22px;
+    &:before {
+        content: "\e94a";
+		color: #eb6f93;
+		font-size: 68px;
+    }
+}
+.lscoicon-directEbanking {
+	top: -22px;
+    &:before {
+        content: "\e949";
+		color: #eb6f93;
+		font-size: 68px;
+    }
+}
+.lscoicon-dankort {
+    &:before {
+        content: "\e95e";
+    }
+}
+.lscoicon-cartebancaire {
+    &:before {
+        content: "\e95d";
+    }
+}
+.lscoicon-currentlocation {
+	&:before {
+		content: "\e963";
+	}
+}
+.lscoicon-eye-close {
+	&:before {
+		content: "\e969";
+	}
+}
+.lscoicon-eye-open {
+	&:before {
+		content: "\e96a";
+	}
+}
