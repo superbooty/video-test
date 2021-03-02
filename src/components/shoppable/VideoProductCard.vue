@@ -64,9 +64,11 @@ export default {
 
 
 .product-card {
-  width: 350px;
+  width: 95%;
+  margin: 5px 0;
   display: grid;
   grid-gap: 5px;
+  background: white;
   grid-template-columns: 100px 1fr;
   .product-details {
     font-family: "Helvetica-Now-Text-Regular";

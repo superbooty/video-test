@@ -3,8 +3,10 @@
     <div class="video-container aspect-169 pos-relative">
       <video class="video-el br-all pos-absolute"
         :poster="videoPoster"
-        controls autoplay>
-        <source :src="videoSrc" />
+        controls autoplay
+        crossorigin="annoynymous"
+        >
+        <source v-if="videoSrc" :src="videoSrc" />
         <track
           id="trk"
           default
@@ -16,7 +18,10 @@
       </video>
     </div>
     <div class="shoppable-products">
-        <video-product-card v-for="code in codes"
+        <div v-if="codes.length < 1" class="no-products">
+          <span>This video is shoppable</span>
+        </div>
+        <video-product-card  v-else v-for="code in codes"
           :key="code" :code="code" ref="vpc`${code}`">
         </video-product-card>
     </div>
@@ -33,23 +38,54 @@ export default {
 
     const codes = new reactive([]);
 
-    const videoSrc = ref(
-      "https://assets.contentstack.io/v3/assets/bltab687eb09ed92451/blt0516a2ddf86d32f7/60256c5f5f9b2812764c3de9/levisSeasonalSample.mp4"
-    );
-    const metaFileSrc = ref("/video-meta/meta.vtt");
-    const videoPoster = ref("https://images.contentstack.io/v3/assets/blt2d702d64bab5cd4d/blt04212de7f2aedc90/5e3030fbe147ae4537d92d1f/sh_50193_chino.jpg?width=1030&format=pjpg&quality=90");
+    const videoSrc = ref(null);
+    const metaFileSrc = ref(null);
+    const videoPoster = ref(null);
+
+    const url =
+      "https://cdn.contentstack.io/v3/content_types/module_video_stream_shoppable_v1/entries?environment=example&uid=blt56bc1514958aa740";
+    const options = {
+      method: "GET",
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: "same-origin", // include, *same-origin, omit
+      headers: {
+        "content-type": "application/json",
+        api_key: "blta74051ed59d33def",
+        access_token: "cs48aa4fb094e77b43fcea00e2",
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+    };
+    
+    fetch(url, options).then(response => {
+        return response.json();
+      }).then(data => {
+        videoSrc.value = data.entries[0].video_url;
+        videoPoster.value = data.entries[0].video_poster_url;
+        metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
+      });
 
     // methods
     const codeSeen = (code) => {
       return codes.length > 0 ? codes.includes(code) : false;
     }
 
+    var connection = new WebSocket('wss://e8nblavjl9.execute-api.us-west-2.amazonaws.com/dev');
+
     return {
       videoSrc,
       metaFileSrc,
       videoPoster,
       codes,
-      codeSeen
+      codeSeen,
+      connection
+    };
+  },
+  beforeUnmount() {
+    this.connection.close();
+    this.connection.onclose = function () {
+      console.log("clean up");
     };
   },
   mounted() {
@@ -66,7 +102,26 @@ export default {
           }
         });
       }
+    }
+    console.log("CONNECTION :: ", this.connection);
+
+    this.connection.onopen = function () {
+      this.send(
+        // This message will be routed to 'routeA' based on the 'action'
+        // property
+        JSON.stringify({ action: 'handshake', data: 'hi' })
+      );
     };
+
+    this.connection.onmessage = function (e) {
+      console.log('Server: ' + e.data);
+    };
+
+    window.addEventListener('unload', () => {
+      console.log("Websocket closing...")
+      this.connection.close();
+    });
+
   },
   components: {
     VideoProductCard,
@@ -79,11 +134,12 @@ export default {
 .shoppable-container {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 350px;
   grid-template-rows: 400px;
   height: 400px;
   .video-container {
     width: 500px;
+    background: black;
     video {
       height: 100%;
       object-fit: cover;
@@ -92,10 +148,16 @@ export default {
   }
   .shoppable-products {
     height: 100%;
+    width: 100%;
     scroll-behavior: smooth;
     overflow-y: auto;
     list-style-type: none;
-    height: 100%;
+    .no-products {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
