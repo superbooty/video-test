@@ -1,12 +1,15 @@
 <template>
   <div class="shoppable-container">
     <div class="video-container aspect-169 pos-relative">
-      <video class="video-el br-all pos-absolute"
+      <video
+        id="video-player"
+        class="video-el br-all pos-absolute"
         :poster="videoPoster"
-        controls autoplay
+        controls
         crossorigin="annoynymous"
-        >
-        <source v-if="videoSrc" :src="videoSrc" />
+        type="application/x-mpegURL"
+      >
+        <!-- <source v-if="videoSrc" :src="videoSrc" /> -->
         <track
           id="trk"
           default
@@ -18,20 +21,28 @@
       </video>
     </div>
     <div class="shoppable-products">
-        <div v-if="codes.length < 1" class="no-products">
-          <span>This video is shoppable</span>
-        </div>
-        <video-product-card  v-else v-for="code in codes"
-          :key="code" :code="code" ref="vpc`${code}`">
-        </video-product-card>
+      <div v-if="codes.length < 1" class="no-products">
+        <span>This video is shoppable</span>
+      </div>
+      <video-product-card
+        v-else
+        v-for="code in codes"
+        :key="code"
+        :code="code"
+        ref="vpc`${code}`"
+      >
+      </video-product-card>
     </div>
+    <web-socket></web-socket>
   </div>
 </template>
 
 <script>
 import VideoProductCard from "../components/shoppable/VideoProductCard.vue";
+import WebSocket from "./WebSocket.vue";
+import { loadScript } from "@/utils/loadScripts";
 
-import { ref, reactive } from "vue";
+import { ref, reactive, computed } from "vue";
 export default {
   setup(props) {
     console.log("Item Selector PROPS :: ", props);
@@ -41,6 +52,7 @@ export default {
     const videoSrc = ref(null);
     const metaFileSrc = ref(null);
     const videoPoster = ref(null);
+    const playerLoaded = ref(false);
 
     const url =
       "https://cdn.contentstack.io/v3/content_types/module_video_stream_shoppable_v1/entries?environment=example&uid=blt56bc1514958aa740";
@@ -57,11 +69,13 @@ export default {
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     };
-    
-    fetch(url, options).then(response => {
+
+    fetch(url, options)
+      .then((response) => {
         return response.json();
-      }).then(data => {
-        videoSrc.value = data.entries[0].video_url;
+      })
+      .then((data) => {
+        // videoSrc.value = data.entries[0].video_url;
         videoPoster.value = data.entries[0].video_poster_url;
         metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
       });
@@ -69,9 +83,12 @@ export default {
     // methods
     const codeSeen = (code) => {
       return codes.length > 0 ? codes.includes(code) : false;
-    }
+    };
 
-    var connection = new WebSocket('wss://e8nblavjl9.execute-api.us-west-2.amazonaws.com/dev');
+    // computed
+    const ivsPlayerHost = computed(() => {
+      return process.env.VUE_APP_IVS_PLAYER;
+    });
 
     return {
       videoSrc,
@@ -79,20 +96,37 @@ export default {
       videoPoster,
       codes,
       codeSeen,
-      connection
+      ivsPlayerHost,
+      playerLoaded,
     };
   },
-  beforeUnmount() {
-    this.connection.close();
-    this.connection.onclose = function () {
-      console.log("clean up");
-    };
-  },
+  
   mounted() {
+    let player = null;
+    if (!window.customElements.get("amazon-ivs-player")) {
+      loadScript(
+        `${this.ivsPlayerHost}/amazon-ivs-player.min.js`,
+        "amazon-ivs-player"
+      ).then(() => {
+        this.playerLoaded = true;
+        player = window.IVSPlayer.create();
+        player.attachHTMLVideoElement(document.getElementById("video-player"));
+        player.load(
+          "https://4da4a22026d3.us-west-2.playback.live-video.net/api/video/v1/us-west-2.298083573632.channel.hdviye1zVPxT.m3u8"
+        );
+      });
+    } else {
+      player.load(
+        "https://4da4a22026d3.us-west-2.playback.live-video.net/api/video/v1/us-west-2.298083573632.channel.hdviye1zVPxT.m3u8"
+      );
+    }
+      
     const videoTrack = document.querySelector("track");
     videoTrack.oncuechange = (e) => {
       // get the meta text
-      const meta = [...e.target.track.activeCues].map((t) => t.text).join(" ");
+      const meta = [...e.target.track.activeCues]
+        .map((t) => t.text)
+        .join(" ");
       if (meta) {
         const data = JSON.parse(meta);
         console.log(data.products);
@@ -102,34 +136,19 @@ export default {
           }
         });
       }
-    }
-    console.log("CONNECTION :: ", this.connection);
-
-    this.connection.onopen = function () {
-      this.send(
-        // This message will be routed to 'routeA' based on the 'action'
-        // property
-        JSON.stringify({ action: 'handshake', data: 'hi' })
-      );
     };
-
-    this.connection.onmessage = function (e) {
-      console.log('Server: ' + e.data);
-    };
-
-    window.addEventListener('unload', () => {
-      console.log("Websocket closing...")
-      this.connection.close();
-    });
-
   },
   components: {
     VideoProductCard,
+    WebSocket
   },
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import "../assets/scss/_variables.scss";
+@import "../assets/scss/lscoicons.scss";
+@import "../assets/scss/levi-fonts.scss";
 
 .shoppable-container {
   position: relative;
@@ -137,6 +156,20 @@ export default {
   grid-template-columns: 1fr 350px;
   grid-template-rows: 400px;
   height: 400px;
+  .external-msg {
+    font-family: "Helvetica-Now-Text-Regular";
+    font-size: 20px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 34px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+    border: 1px solid #aae4aa;
+    border-radius: 20px;
+    background: #c9f6c9;
+    color: blue;
+  }
   .video-container {
     width: 500px;
     background: black;
