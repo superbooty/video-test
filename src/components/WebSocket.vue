@@ -1,7 +1,26 @@
 <template>
   <div class="ws-container">
-    <div class="external-msg">{{ externalMsg }}</div>
-
+    <div v-if="externalMsg" class="external-msg">{{ externalMsg }}</div>
+    <div class="broadcaster">
+      <button class="favorite styled" type="button"
+        @click="broadcastMsg(message)">Broadcast Message</button>
+      <input
+        class="msg"
+        v-model="message"
+        type="text"
+        placeholder="Enter a message to broadcast"
+      />
+    </div>
+    <div class="broadcaster">
+      <button class="favorite styled" type="button"
+        @click="sendProducts(products)">Broadcast Products</button>
+      <input
+        class="msg"
+        v-model="products"
+        type="text"
+        placeholder="Enter productIds separated by commas"
+      />
+    </div>
   </div>
 </template>
 
@@ -37,16 +56,17 @@ export default {
       }
       // send message to parent
       if (msgData.action === "products") {
-        emit("custom-cue", {productIds: [msgData.data]});
+        emit("custom-cue", {productIds: msgData.data});
       }
     };
 
     // methods
     const sendProducts = (msg) => {
+       const products = msg.split(',').map(item => item.trim())
        connection.send(
         // This message will be routed to 'routeA' based on the 'action'
         // property
-        JSON.stringify({ action: "products", data: msg})
+        JSON.stringify({ action: "products", data: products})
       );
     };
 
@@ -103,17 +123,18 @@ export default {
     color: blue;
   }
   .msg {
-      width: 250px;
-      line-height: 24px;
-      margin: 0 10px;
+    width: 300px;
+    line-height: 32px;
+    margin: 0 10px;
+    font-size: 15px;
   }
   .broadcaster {
     margin: 10px 0;
     .styled {
         border: 0;
-        width: 100px;
-        line-height: 2.5;
-        font-size: 1rem;
+        width: 150px;
+        line-height: 42px;
+        font-size: 14px;
         text-align: center;
         color: #fff;
         text-shadow: 1px 1px 1px #000;
