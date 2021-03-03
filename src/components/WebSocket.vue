@@ -1,6 +1,28 @@
 <template>
   <div class="ws-container">
     <div v-if="externalMsg" class="external-msg">{{ externalMsg }}</div>
+    <div class="broadcaster">
+      <button class="favorite styled" type="button"
+        @click="broadcastMsg(message)">Broadcast Message</button>
+      <input
+        class="msg"
+        v-model="message"
+        type="text"
+        placeholder="Enter a message to broadcast"
+      />
+    </div>
+    <div class="broadcaster">
+      <button class="favorite styled" type="button"
+        @click="sendProducts(products)">Broadcast Products</button>
+      <input
+        class="msg"
+        v-model="products"
+        type="text"
+        required
+        pattern="([0-9]{9,9}|,)+"
+        placeholder="Enter productIds separated by commas"
+      />
+    </div>
   </div>
 </template>
 
