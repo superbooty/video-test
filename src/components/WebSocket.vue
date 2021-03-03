@@ -90,17 +90,17 @@ export default {
 .ws-container {
   .external-msg {
     font-family: "Helvetica-Now-Text-Regular";
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     text-align: left;
-    line-height: 34px;
+    text-indent: 15px;
+    line-height: 38px;
     width: 100%;
-    text-align: center;
     margin: 10px 0;
-    border: 1px solid #aae4aa;
+    border: 1px solid #959895;
     border-radius: 20px;
-    background: #c9f6c9;
-    color: blue;
+    background: #2d2d2d;
+    color: white;
   }
   .msg {
     width: 300px;
