@@ -18,6 +18,8 @@
         class="msg"
         v-model="products"
         type="text"
+        required
+        pattern="([0-9]{9,9}|,)+"
         placeholder="Enter productIds separated by commas"
       />
     </div>
