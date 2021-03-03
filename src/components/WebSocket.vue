@@ -12,7 +12,7 @@ export default {
     code: String,
   },
 
-  setup(props) {
+  setup(props, {emit}) {
     console.log("Item Selector PROPS :: ", props);
 
     const externalMsg = ref(null);
@@ -31,12 +31,26 @@ export default {
 
     connection.onmessage = (e) => {
       const msgData = JSON.parse(e.data);
-      externalMsg.value = msgData.data;
+      externalMsg.value = (msgData.data) ? msgData.data : "";
+      // send message to parent
+      if (msgData.action === "message") {
+        emit("custom-cue", {productIds: [msgData.data]});
+      }
+    };
+
+    // methods
+    const broadcastMsg = (msg) => {
+       connection.send(
+        // This message will be routed to 'routeA' based on the 'action'
+        // property
+        JSON.stringify({ action: "message", data: msg})
+      );
     };
 
     return {
       connection,
       externalMsg,
+      broadcastMsg
     };
   },
   mounted() {
@@ -75,6 +89,39 @@ export default {
     border-radius: 20px;
     background: #c9f6c9;
     color: blue;
+  }
+  .msg {
+      width: 200px;
+      line-height: 24px;
+      margin: 0 10px;
+  }
+  .styled {
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: rgba(220, 0, 0, 1);
+    background-image: linear-gradient(
+      to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0)
+    );
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  }
+
+  .styled:hover {
+    background-color: rgba(255, 0, 0, 1);
+  }
+
+  .styled:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
   }
 }
 </style>
