@@ -97,7 +97,7 @@ export default {
     line-height: 38px;
     width: 100%;
     margin: 10px 0;
-    border: 1px solid #959895;
+    border: 1px solid #c0c0c0;
     border-radius: 20px;
     background: #2d2d2d;
     color: white;
