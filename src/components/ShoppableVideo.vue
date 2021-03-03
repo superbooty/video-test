@@ -133,10 +133,12 @@ export default {
         this.player.addEventListener(window.IVSPlayer.PlayerEventType.TEXT_METADATA_CUE, (cue) => {
             console.log('Timed metadata: ', cue.text);
             const data = JSON.parse(cue.text);
+            console.log("DATA :: ", data);
             data.productIds.forEach((product) => {
-              if (!this.codeSeen(product.id)) {
-                this.codes.unshift(product.id);
+              if (!this.codeSeen(product)) {
+                this.codes.unshift(product);
               }
+              console.log("CODES :: ", this.codes);
             });
         });
       });

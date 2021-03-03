@@ -28,7 +28,9 @@ export default {
 
     fetch(`mocks/product/${props.code}.json`)
       .then((response) => {
-        return response.json();
+        const jsonObj = response.json();
+        console.log(jsonObj);
+        return jsonObj;
       })
       .then((myJson) => {
         console.log(myJson);
