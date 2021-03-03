@@ -1,6 +1,7 @@
 <template>
   <div class="ws-container">
     <div class="external-msg">{{ externalMsg }}</div>
+
   </div>
 </template>
 
@@ -31,14 +32,24 @@ export default {
 
     connection.onmessage = (e) => {
       const msgData = JSON.parse(e.data);
-      externalMsg.value = (msgData.data) ? msgData.data : "";
-      // send message to parent
       if (msgData.action === "message") {
+        externalMsg.value = (msgData.data) ? msgData.data : "";
+      }
+      // send message to parent
+      if (msgData.action === "products") {
         emit("custom-cue", {productIds: [msgData.data]});
       }
     };
 
     // methods
+    const sendProducts = (msg) => {
+       connection.send(
+        // This message will be routed to 'routeA' based on the 'action'
+        // property
+        JSON.stringify({ action: "products", data: msg})
+      );
+    };
+
     const broadcastMsg = (msg) => {
        connection.send(
         // This message will be routed to 'routeA' based on the 'action'
@@ -50,7 +61,8 @@ export default {
     return {
       connection,
       externalMsg,
-      broadcastMsg
+      broadcastMsg,
+      sendProducts
     };
   },
   mounted() {
@@ -91,37 +103,40 @@ export default {
     color: blue;
   }
   .msg {
-      width: 200px;
+      width: 250px;
       line-height: 24px;
       margin: 0 10px;
   }
-  .styled {
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1rem;
-    text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
-    background-image: linear-gradient(
-      to top left,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0)
-    );
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
-  }
+  .broadcaster {
+    margin: 10px 0;
+    .styled {
+        border: 0;
+        width: 100px;
+        line-height: 2.5;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgba(220, 0, 0, 1);
+        background-image: linear-gradient(
+        to top left,
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2) 30%,
+        rgba(0, 0, 0, 0)
+        );
+        box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+        inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
 
-  .styled:hover {
-    background-color: rgba(255, 0, 0, 1);
-  }
+    .styled:hover {
+        background-color: rgba(255, 0, 0, 1);
+    }
 
-  .styled:active {
-    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-      inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    .styled:active {
+        box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+        inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
   }
 }
 </style>
