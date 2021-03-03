@@ -33,7 +33,7 @@
       >
       </video-product-card>
     </div>
-    <web-socket></web-socket>
+    <web-socket @customCue="customCueBuilder"></web-socket>
   </div>
 </template>
 
@@ -53,6 +53,7 @@ export default {
     const metaFileSrc = ref(null);
     const videoPoster = ref(null);
     const playerLoaded = ref(false);
+    const player = ref(null);
 
     const url =
       "https://cdn.contentstack.io/v3/content_types/module_video_stream_shoppable_v1/entries?environment=example&uid=blt56bc1514958aa740";
@@ -77,12 +78,24 @@ export default {
       .then((data) => {
         // videoSrc.value = data.entries[0].video_url;
         videoPoster.value = data.entries[0].video_poster_url;
-        metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
+        // metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
       });
 
     // methods
     const codeSeen = (code) => {
       return codes.length > 0 ? codes.includes(code) : false;
+    };
+
+    const customCueBuilder = (val) => {
+      if (player.value) {
+        player.value.core.emitter.emit("PlayerTextMetadataCue", {
+            description: "",
+            endTime: 2.37615555555556,
+            startTime: 1.37615555555556,
+            text: JSON.stringify({ productIds: val.productIds }),
+            type: "TextMetadataCue"
+        });
+      }
     };
 
     // computed
@@ -98,25 +111,37 @@ export default {
       codeSeen,
       ivsPlayerHost,
       playerLoaded,
+      player,
+      customCueBuilder
     };
   },
   
   mounted() {
-    let player = null;
+    
     if (!window.customElements.get("amazon-ivs-player")) {
       loadScript(
         `${this.ivsPlayerHost}/amazon-ivs-player.min.js`,
         "amazon-ivs-player"
       ).then(() => {
         this.playerLoaded = true;
-        player = window.IVSPlayer.create();
-        player.attachHTMLVideoElement(document.getElementById("video-player"));
-        player.load(
-          "https://4da4a22026d3.us-west-2.playback.live-video.net/api/video/v1/us-west-2.298083573632.channel.hdviye1zVPxT.m3u8"
-        );
+        this.player = window.IVSPlayer.create();
+        this.player.attachHTMLVideoElement(document.getElementById("video-player"));
+        // this.player.load(
+        //   "https://4da4a22026d3.us-west-2.playback.live-video.net/api/video/v1/us-west-2.298083573632.channel.hdviye1zVPxT.m3u8"
+        // );
+        this.player.load("https://ivs-poc-recording.s3-us-west-2.amazonaws.com/ivs/497531642140/1wZsrjIZeadM/2021-02-25T19-43-18.644Z/YXgJrTUmfxiM/media/hls/master.m3u8");
+        this.player.addEventListener(window.IVSPlayer.PlayerEventType.TEXT_METADATA_CUE, (cue) => {
+            console.log('Timed metadata: ', cue.text);
+            const data = JSON.parse(cue.text);
+            data.productIds.forEach((product) => {
+              if (!this.codeSeen(product.id)) {
+                this.codes.unshift(product.id);
+              }
+            });
+        });
       });
     } else {
-      player.load(
+      this.player.load(
         "https://4da4a22026d3.us-west-2.playback.live-video.net/api/video/v1/us-west-2.298083573632.channel.hdviye1zVPxT.m3u8"
       );
     }
