@@ -40,8 +40,6 @@ export default {
 }
 
 .page {
-  max-width: 800px;
   display: inline-block;
-  /* width: 800px; */
 }
 </style>
