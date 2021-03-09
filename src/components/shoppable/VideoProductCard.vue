@@ -1,6 +1,7 @@
 <template>
-  <transition name="fade" appear>
-    <div v-if="product" class="product-card">
+  <transition name="fade">
+    <div :id="code" v-if="product" class="product-card" :class="{'high-light': highlight}"
+      @click="atcProduct(code)">
       <div class="product-img">
         <img :src="product.images[3].url" />
       </div>
@@ -19,9 +20,13 @@ import { ref } from "vue";
 export default {
   props: {
     code: String,
+    highlight: {
+        type: Boolean,
+        default: false,
+    },
   },
 
-  setup(props) {
+  setup(props, {emit}) {
     console.log("Item Selector PROPS :: ", props);
 
     const product = ref(null);
@@ -37,8 +42,14 @@ export default {
         product.value = myJson;
       });
 
+      // methods
+      const atcProduct = (code) => {
+         emit("open-modal", code);
+      }
+
     return {
       product,
+      atcProduct
     };
   },
 };
@@ -71,20 +82,26 @@ export default {
   display: grid;
   grid-gap: 5px;
   background: white;
-  grid-template-columns: 100px 1fr;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: 90px;
   .product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     font-family: "Helvetica-Now-Text-Regular";
     font-size: 13px;
     font-weight: 400;
     text-align: left;
     line-height: 16px;
+    border-top: 2px solid #d6d6d6;
   }
   .product-img {
     // z-index: 100;
     margin: auto;
+    height: 100%;
     img {
-      max-width: 100px;
-      max-height: 100px;
+      width: 100%;
+      height: 100%;
       object-fit: contain;
       // z-index: 0;
       // overflow: hidden;
