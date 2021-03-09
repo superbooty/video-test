@@ -117,7 +117,7 @@ export default {
   },
   
   mounted() {
-    
+
     if (!window.customElements.get("amazon-ivs-player")) {
       loadScript(
         `${this.ivsPlayerHost}/amazon-ivs-player.min.js`,
