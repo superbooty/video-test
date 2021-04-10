@@ -77,7 +77,7 @@ export default {
 
 
 .product-card {
-  width: 95%;
+  width: 100%;
   margin: 5px 0;
   display: grid;
   grid-gap: 5px;
@@ -102,7 +102,10 @@ export default {
     img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
+      &:hover {
+        transform: scaleX(-1);
+      }
       // z-index: 0;
       // overflow: hidden;
     }

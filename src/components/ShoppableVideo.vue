@@ -8,6 +8,8 @@
         crossorigin
         controls="controls"
         preload="none"
+        loop
+        type="video/mp4"
         :poster="videoPoster"
       >
         <!-- <source v-if="videoSrc" :src="videoSrc" /> -->
@@ -20,7 +22,9 @@
           label="Key Stage 2"
         />
       </video>
-      <div class="admin-console" @click="toggleAdmin()">admin</div>
+      <div class="admin-console" @click="toggleAdmin()">Messaging Console
+        <div class="menu-expander" :class="{'opened': showAdmin}"></div>
+      </div>
     </div>
     <div id="shoppy" class="shoppable-products" ref="shoppableList">
       <div v-if="!productCollection" class="no-products">
@@ -44,7 +48,7 @@
     </div>
     <add-to-bag-modal v-if="atcCode" :code="atcCode" @close-modal="closeModal"/>
   </div>
-  <web-socket v-if="showAdmin" @customCue="customCueBuilder"></web-socket>
+  <web-socket v-if="showAdmin" @customCue="customCueBuilder" @addToBucket="addToBucket"></web-socket>
 </template>
 
 <script>
@@ -133,9 +137,26 @@ export default {
       // console.log('MESSED :: ', codes);
     }
 
+    const addToBucket = (val) => {
+      const data = {products: val.productIds};
+      const productsHash = md5(data.products.toString()).toString();
+      const productColl = { hash: productsHash, products: data.products };
+      if (!productCollection.value.some((e) => e.hash === productsHash)) {
+        productCollection.value.unshift(productColl);
+      } else {
+          const found = productCollection.value.find((el) => {
+          return el.hash === productsHash;
+        });
+        productCollection.value = productCollection.value.filter((el) => {
+          return el.hash !== productsHash;
+        });
+        productCollection.value.unshift(found);
+      }
+    }
+
     const playVideo = () => {
       player.value.load(
-        "https://d39rhsn6wdjbch.cloudfront.net/ivs/497531642140/1wZsrjIZeadM/2021-03-04T02-14-12.142Z/AOflm4FcCEN5/media/hls/master.m3u8"
+        "https://assets.contentstack.io/v3/assets/bltab687eb09ed92451/blt0516a2ddf86d32f7/60256c5f5f9b2812764c3de9/levisSeasonalSample.mp4"
       );
     }
 
@@ -230,7 +251,8 @@ export default {
       showAdmin,
       atcCode,
       openModal,
-      closeModal
+      closeModal,
+      addToBucket
     };
   },
   
@@ -258,14 +280,13 @@ export default {
     flex: 0 1 auto;
     flex-direction: row;
     position: relative;
-    height: 400px;
+    max-height: 420px;
   .admin-console {
     position: relative;
     top: -6px;
-    left: 7px;
-    line-height: 26px;
-    width: 100px;
-    background: #adadad;
+    left: 10px;
+    width: 130px;
+    background: #000000;
     color: white;
     font-size: 12px;
     // End
@@ -278,9 +299,6 @@ export default {
       height: 100%;
       width: 100%;
       background-color: inherit;
-      -webkit-transform: skewX(-10deg);
-      -moz-transform: skewX(-10deg);
-      -ms-transform: skewX(-10deg);
       transform: skewX(-10deg);
     }
     &:before {
@@ -292,10 +310,21 @@ export default {
       height: 100%;
       width: 100%;
       background-color: inherit;
-      -webkit-transform: skewX(10deg);
-      -moz-transform: skewX(10deg);
-      -ms-transform: skewX(10deg);
       transform: skewX(10deg);
+    }
+    .menu-expander {
+      height: 20px;
+      transition-duration: .250s;
+      &.opened {
+        transform: rotate(180deg);
+        transition-duration: .250s;
+      }
+      &:after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+        transition-property: transform;
+        transform-origin: 22px 14px;
+        transition-duration: .250s;
+      }
     }
   }
   .external-msg {
@@ -321,7 +350,7 @@ export default {
       object-fit: cover;
       width: 100%;
       height: 100%;
-      object-position: top;
+      outline: none;
     }
     .poster {
       position: absolute;
@@ -334,24 +363,28 @@ export default {
     }
   }
   .shoppable-products {
-    flex: 0 0 auto;
     flex-basis: 24vw;
     overflow-y: auto;
     width: 24vw;
     height: 100%;
+    background: black;
+    // position: relative;
+    // left: -340px;
     .product-group {
       &:nth-child(1) {
-        margin: 0;
-        border-left: 2px solid red;
+        margin: 0 15px 0 10px;
+        background: #ffffff;
+        border-left: 3px solid red;
       }
       ul {
         margin: 0;
       }
-      margin: 25px 0;
-      box-shadow: 13px 4px 10px 0px #f4f4f4;
+      margin: 25px 15px 0 10px;
+      background: #ffffff;
+      border-left: 3px solid #cfcfcf;
+      box-shadow: 6px 6px 2px 0px #bdbdbd;
     }
     ul {
-      margin: 10px;
       padding: 0;
       list-style-type: none;
     }

@@ -211,6 +211,8 @@ export default {
     height: 100%;
     img {
       height: 100%;
+      object-fit: cover;
+      min-width: 100%;
     }
   }
 }
@@ -218,7 +220,6 @@ export default {
 .size-tiles {
   position: relative;
   text-align: left;
-  max-height: 250px;
   max-width: 320px
 }
 
@@ -262,7 +263,10 @@ export default {
   transform: translate(-50%, 10px);
   background: white;
   border: 1px solid #cbcbcb;
+  box-shadow: -4px -1px 7px 8px #ffffff;
   border-radius: 10px;
+  z-index: 100;
+  overflow: hidden;
 }
 
 .modal ul {
@@ -280,21 +284,27 @@ export default {
 .modal ul li { 
   display: inline-block;
   white-space: nowrap;
-  width: 30px;
-  height: 30px;
+  width: 28px;
+  height: 28px;
   list-style: none;
-  line-height: 30px;
+  line-height: 28px;
   text-align: center;
-  margin: 2px;
-  font-size: 12px;
+  margin: 6px;
+  font-size: 10px;
+  border-radius: 20px;
+  background: #f8f8f8;
+  
 }
 
 .selected {
   position: relative;
-  width: 20px;
-  top: 0px;
+  width: 30px;
+  top: -30px;
+  left: -2px;
+  height: 30px;
   border: 1px solid #b30d0d;
   margin: 0 auto;
+  border-radius: 16px;
 }
 
 .size-label {
@@ -315,6 +325,7 @@ export default {
 .atb-section {
   width: 100%;
   text-align: center;
+  margin: 10px 0;
 }
 
 .atb-btn {

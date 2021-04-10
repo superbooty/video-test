@@ -1,15 +1,13 @@
 <template>
   <div id="app">
-    <Header msg="Content and Commerce Category Page" />
-    <div class="separator"></div>
     <div class="page">
-      <shoppable-video></shoppable-video>
+      <event></event>
     </div>
   </div>
 </template>
 
 <script>
-import ShoppableVideo from "./components/ShoppableVideo.vue";
+import Event from "./components/Event.vue";
 
 export default {
   name: "App",
@@ -19,7 +17,7 @@ export default {
   },
 
   components: {
-    ShoppableVideo,
+    Event,
   },
   mounted() {
   }
@@ -36,10 +34,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .page {
-  display: inline-block;
+  max-width: 90vw;
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  height: 100vh;
 }
 </style>
