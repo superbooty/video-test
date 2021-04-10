@@ -1,0 +1,1157 @@
+{
+    "altText": "Clothing-Bottoms-501® '93 Straight Men's Jeans-Thistle",
+    "averageOverallRatings": 4.2105,
+    "baseProduct": "79830",
+    "channels": [],
+    "classifications": [
+        {
+            "code": "apparel",
+            "features": [
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.size_group",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Men's Regular",
+                            "code": null
+                        }
+                    ],
+                    "name": "Size Group",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.occasion",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "INCLUDED",
+                            "code": null
+                        },
+                        {
+                            "value": "1",
+                            "code": null
+                        }
+                    ],
+                    "name": "Occasion",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.gender",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Men",
+                            "code": null
+                        }
+                    ],
+                    "name": "Gender",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.material",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "99% Cotton",
+                            "code": null
+                        },
+                        {
+                            "value": "1% Elastane",
+                            "code": null
+                        },
+                        {
+                            "value": "Heavyweight Denim",
+                            "code": null
+                        },
+                        {
+                            "value": "Button Fly",
+                            "code": null
+                        },
+                        {
+                            "value": "5-pocket styling",
+                            "code": null
+                        },
+                        {
+                            "value": "Imported",
+                            "code": null
+                        }
+                    ],
+                    "name": "Materials",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.color_family",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Thistle - Light Wash",
+                            "code": null
+                        }
+                    ],
+                    "name": "Color Family",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.closure",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Button Fly",
+                            "code": null
+                        }
+                    ],
+                    "name": "Closure",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.fit",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Straight",
+                            "code": null
+                        }
+                    ],
+                    "name": "Fit",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/apparel.fit_text",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Regular fit through the thigh",
+                            "code": null
+                        },
+                        {
+                            "value": "Sits at your waist; Front rise: 11.5\"",
+                            "code": null
+                        },
+                        {
+                            "value": "Straight leg opening: 16\"",
+                            "code": null
+                        },
+                        {
+                            "value": "Measurements are taken from a size 33 waist",
+                            "code": null
+                        }
+                    ],
+                    "name": "Fit & Sizing",
+                    "range": false,
+                    "type": null
+                }
+            ],
+            "name": "Apparel"
+        },
+        {
+            "code": "bottoms",
+            "features": [
+                {
+                    "code": "lscoClassificationCatalog/1.0/bottoms.wash",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Light Wash",
+                            "code": null
+                        }
+                    ],
+                    "name": "Wash",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/bottoms.leg_opening",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Straight",
+                            "code": null
+                        }
+                    ],
+                    "name": "Leg Opening",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/bottoms.fit_name",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "501®",
+                            "code": null
+                        }
+                    ],
+                    "name": "Fit Name",
+                    "range": false,
+                    "type": null
+                },
+                {
+                    "code": "lscoClassificationCatalog/1.0/bottoms.stretch",
+                    "comparable": true,
+                    "description": null,
+                    "featureUnit": null,
+                    "featureValues": [
+                        {
+                            "value": "Stretch",
+                            "code": null
+                        }
+                    ],
+                    "name": "Stretch",
+                    "range": false,
+                    "type": null
+                }
+            ],
+            "name": "Bottoms"
+        }
+    ],
+    "code": "798300018",
+    "colorGroup": "Light Wash",
+    "colorName": "Thistle - Light Wash",
+    "comingSoon": false,
+    "crossSellProductUrl": null,
+    "crossSellSizeGroup": null,
+    "customizable": false,
+    "flxCustomization": false,
+    "availableForPickup": false,
+    "department": "Clothing",
+    "pdpGroupId": "79830",
+    "returnable": true,
+    "customizationType": "",
+    "description": "<p>Our 501® ‘93 Straight Jeans are inspired by a fit that defined the culture a generation ago, bringing true early ‘90s style to a new generation. Your thrift-store hunt is officially over.</p><UL> <LI> The newest addition to the 501® Family that’s true to the original ‘93 fit. </LI><LI> A vintage-inspired fit that sits at the waist. </LI><LI> Designed with a slightly higher rise. </LI><LI> Added stretch for comfort. </LI><LI> Designed with superior craftsmanship and extra attention, Levi's®️ Premium elevates our iconic styles with quality that’ll stand the test of time </LI><LI> Specially marked with an authentic Levi’s®️ Premium label </LI><LI> <a href=\"https://www.levi.com/US/en_US/customize/levis-future-finish/c/levi_clothing_future_finish_customize_us/facets/feature-gender/men\"target=\"_blank\">Customize your 501® '93 Straight Jeans <b>here</b></a> </LI> </UL>",
+    "findInStoreEligible": false,
+    "lscoBreadcrumbs": [
+        {
+            "categoryCode": "levi_clothing_sale_us",
+            "name": "Sale",
+            "url": "/sale/c/levi_clothing_sale_us"
+        },
+        {
+            "categoryCode": "levi_clothing_men_sale_us",
+            "name": "Men's Sale",
+            "url": "/sale/mens-sale/c/levi_clothing_men_sale_us"
+        },
+        {
+            "categoryCode": "levi_clothing_men_sale_jeans_us",
+            "name": "Jeans",
+            "url": "/sale/mens-sale/jeans/c/levi_clothing_men_sale_jeans_us"
+        },
+        {
+            "categoryCode": null,
+            "name": "501® '93 Straight Men's Jeans",
+            "url": "/apparel/clothing/bottoms/501-93-straight-mens-jeans/p/798300018"
+        }
+    ],
+    "galleryImageList": {
+        "galleryImage": [
+            {
+                "altText": "501® '93 Straight Men's Jeans",
+                "format": "Quickview_Desktop",
+                "galleryIndex": 0,
+                "imageType": "GALLERY",
+                "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
+            },
+            {
+                "altText": "501® '93 Straight Men's Jeans",
+                "format": "Quickview_Desktop",
+                "galleryIndex": 1,
+                "imageType": "GALLERY",
+                "url": "https://lsco.scene7.com/is/image/lsco/798300018-detail1-pdp?$qv_desktop_full$"
+            },
+            {
+                "altText": "501® '93 Straight Men's Jeans",
+                "format": "Quickview_Desktop",
+                "galleryIndex": 2,
+                "imageType": "GALLERY",
+                "url": "https://lsco.scene7.com/is/image/lsco/798300018-back-pdp?$qv_desktop_bottoms$"
+            },
+            {
+                "altText": "501® '93 Straight Men's Jeans",
+                "format": "Quickview_Desktop",
+                "galleryIndex": 3,
+                "imageType": "GALLERY",
+                "url": "https://lsco.scene7.com/is/image/lsco/798300018-side-pdp?$qv_desktop_bottoms$"
+            }
+        ],
+        "videos": null
+    },
+    "images": [
+        {
+            "altText": "501® '93 Straight Men's Jeans",
+            "format": "Quickview_Desktop",
+            "galleryIndex": 0,
+            "imageType": "GALLERY",
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
+        },
+        {
+            "altText": "501® '93 Straight Men's Jeans",
+            "format": "Quickview_Desktop",
+            "galleryIndex": 1,
+            "imageType": "GALLERY",
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-detail1-pdp?$qv_desktop_full$"
+        },
+        {
+            "altText": "501® '93 Straight Men's Jeans",
+            "format": "Quickview_Desktop",
+            "galleryIndex": 2,
+            "imageType": "GALLERY",
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-back-pdp?$qv_desktop_bottoms$"
+        },
+        {
+            "altText": "501® '93 Straight Men's Jeans",
+            "format": "Quickview_Desktop",
+            "galleryIndex": 3,
+            "imageType": "GALLERY",
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-side-pdp?$qv_desktop_bottoms$"
+        }
+    ],
+    "itemType": "Jeans",
+    "maxOrderQuantity": 6,
+    "merchantBadge": "Levi's® Premium",
+    "minOrderQuantity": 1,
+    "multidimensional": true,
+    "name": "501® '93 Straight Men's Jeans",
+    "noOfRatings": 19,
+    "pdpCmsContentId1": "levis_mens_501_93_pdp",
+    "pdpCmsContentId2": null,
+    "potentialPromotions": [
+        {
+            "code": "LVUS_WELCOME_FSNM_090120_090920",
+            "couldFireMessages": null,
+            "couponCode": null,
+            "description": null,
+            "enabled": null,
+            "endDate": 4070908800000,
+            "firedMessages": null,
+            "priority": null,
+            "productBanner": null,
+            "promoDetails": "<p><strong>FREE SHIPPING ON YOUR FIRST ORDER!</strong></p>\n\n<p>Offer ends on 9/9/2020 at 11:59pm PST. This is a one-time use only promotional code. To get the code, join the Levi&rsquo;s&reg; email list at <a class=\"sc-jeCdPy engfqu\" href=\"https://www.levi.com/US/en_US/cms/join\" style=\"color: rgb(0, 82, 204); text-decoration-line: none;\" title=\"https://www.levi.com/US/en_US/cms/join\">https://www.levi.com/US/en_US/cms/join</a> and we will email the code to you. Go to <a class=\"sc-jeCdPy engfqu\" href=\"http://levi.com/\" style=\"color: rgb(0, 82, 204); text-decoration-line: none;\" title=\"http://levi.com/\">levi.com</a>, add the qualifying product(s) to your cart and enter the code. Free standard ground shipping will automatically be applied to the order at checkout when STANDARD GROUND SHIPPING is selected.</p>\n\n<p>New Levi&rsquo;s&reg; email subscribers only. By signing up for Levi&rsquo;s&reg; emails, you agree to receive personalized emails from LS&amp;Co. with exclusive offers, new arrivals, event invites and more, in accordance with the LS&amp;Co&rsquo;s privacy policy. Offer valid on purchases at <a class=\"sc-jeCdPy engfqu\" href=\"http://www.levi.com/US/en_US\" style=\"color: rgb(0, 82, 204); text-decoration-line: none;\" title=\"http://www.levi.com/US/en_US\">www.levi.com/US/en_US</a> only. Offer does not apply to gift certificates, packaging, taxes, or shipping and handling charges. Entire order must be shipped to a single address and customer is responsible for shipping costs of returned merchandise. Offer limited to one-time use per customer and may not be combined with other offers and gift card purchases. LS&amp;Co. reserves the right to modify or terminate this offer at any time without notice. LS&amp;Co. employees are not eligible for discount.</p>\n",
+            "promotionGroup": null,
+            "promotionType": "Rule Based Promotion",
+            "restrictions": null,
+            "startDate": null,
+            "title": "FREE SHIPPING ON YOUR FIRST ORDER!"
+        },
+        {
+            "code": "LVUS_INFLUENCER_022421_030821",
+            "couldFireMessages": null,
+            "couponCode": null,
+            "description": null,
+            "enabled": null,
+            "endDate": 4070908800000,
+            "firedMessages": null,
+            "priority": null,
+            "productBanner": null,
+            "promoDetails": "<p>30% Off Sitewide With Code</p>\n<p>Offer ends on 03/8/21 at 11:59pm PST.</p>\n<p>Promotion Excludes:</p>\n<p>· Gift Cards</p>\n<p>· Customization Services</p>\n<p>· Levi's® Future Finish</p>\n<p>· Levi's® x Ganni</p>\n<p>· Levi's® x Pokemon</p>\n<p>· Levi's® RED</p>\n<p>· Levi's® x BAPE</p>\n<p>· Levi's® x Disney</p>\n<p>· Levi's® x AWAKE</p>\n<p>· Levi’s® Made &amp; Crafted®</p>\n<p>· Levi’s® Vintage Clothing</p>\n<p>· Red Tab Sweats Collection</p>\n<p>· Men’s 551Z Family</p>\n<p>· Women’s 70’s Jean &amp; Skirt Family</p>\n<p>· Women’s Loose Fit Women’s Jeans &amp; Pants</p>\n<p>· Items ending in $.97</p>\n<p>Receive 30% off sitewide when the enclosed promo code is applied to your cart at checkout. Online exclusive. Entire order must be shipped to a single address and customer is responsible for shipping costs of returned merchandise. Discount excludes taxes, gift certificates, gift wrap and packaging/shipping charges. No adjustments on previous purchases. This offer is valid only at levi.com/US/en_US/ and may not be combined with another offer. Only one promo code per order will be accepted. LS&amp;Co. reserves the right to modify or terminate this offer at any time without notice.</p>",
+            "promotionGroup": null,
+            "promotionType": "Rule Based Promotion",
+            "restrictions": null,
+            "startDate": null,
+            "title": "30% Off Sitewide With Code"
+        },
+        {
+            "code": "Voucher_Winback_10OFF_022521",
+            "couldFireMessages": null,
+            "couponCode": null,
+            "description": null,
+            "enabled": null,
+            "endDate": 4070908800000,
+            "firedMessages": null,
+            "priority": null,
+            "productBanner": null,
+            "promoDetails": "<p>This is a one-time use only promotional code. $10 off your cart. To qualify for discount, minimum order amounts must be reached before taxes, gift-wrapping or shipping.</p>\n<p>Discount does not apply to taxes, gift certificates, wrapping and packaging charges. No adjustments on previous purchases. This offer is valid only at<a href=\"http://www.levi.com/US/en_US/\"> www.levi.com/US/en_US/</a>. Only one promo code per order. LS&amp;CO reserves the right to modify or terminate this offer at any time without notice.</p>",
+            "promotionGroup": null,
+            "promotionType": "Rule Based Promotion",
+            "restrictions": null,
+            "startDate": null,
+            "title": "$10 off your cart. One-Time Use."
+        },
+        {
+            "code": "Welcome",
+            "couldFireMessages": null,
+            "couponCode": null,
+            "description": "For All New Levi’s® Email Subscribers",
+            "enabled": null,
+            "endDate": 4070908800000,
+            "firedMessages": null,
+            "priority": null,
+            "productBanner": null,
+            "promoDetails": "<p>This is a one-time use only promotional code. To get the code, join the Levi&rsquo;s&reg; email list at https://www.levi.com/US/en_US/cms/join and we will email the code to you. Go to levi.com, add the qualifying product(s) to your cart, enter the code, and the 20% discount will be applied at checkout.<br />\nPromotion Excludes:</p>\n\n<ul>\n\t<li>Gift Cards</li>\n\t<li>Customization Services</li>\n\t<li>Levi&#39;s&reg; Future Finish</li>\n\t<li>Levi&#39;s&reg; Facemasks</li>\n\t<li>Levi&#39;s&reg; x Golf</li>\n\t<li>Levi&#39;s&reg; x PEANUTS&reg;</li>\n\t<li>Levi&rsquo;s&reg; Wellthread Renewcell Recycled Denim</li>\n\t<li>Levi&rsquo;s&reg; x BEAMS</li>\n\t<li>Levi&rsquo;s&reg; Pride Collection</li>\n\t<li>Levi&rsquo;s&reg; Made &amp; Crafted&reg;</li>\n\t<li>Levi&rsquo;s&reg; Vintage Clothing</li>\n\t<li>Select Fits</li>\n\t<li>Select Collaborations</li>\n\t<li>Stay Loose Men&rsquo;s Jeans &amp; Pants</li>\n\t<li>Loose Fit Women&rsquo;s Jeans &amp; Pants</li>\n\t<li>Items ending in $.97</li>\n</ul>\n\n<p>New Levi&rsquo;s&reg; email subscribers only. By signing up for Levi&rsquo;s&reg; emails, you agree to receive personalized emails from LS&amp;Co. with exclusive offers, new arrivals, event invites and more, in accordance with the LS&amp;Co&rsquo;s privacy policy. Offer valid on purchases at www.levi.com/US/en_US, Levi&rsquo;s&reg; Retail Stores and Levi&rsquo;s&reg; Outlet Stores in the United States only. Offer does not apply to gift certificates, packaging, taxes, or shipping and handling charges. Free standard ground shipping will automatically be applied to the order at checkout when STANDARD GROUND SHIPPING is selected. Entire order must be shipped to a single address and customer is responsible for shipping costs of returned merchandise. Offer limited to one-time use per customer and may not be combined with other offers and gift card purchases. LS&amp;Co. reserves the right to modify or terminate this offer at any time without notice. LS&amp;Co. employees are not eligible for discount.</p>\n",
+            "promotionGroup": null,
+            "promotionType": "Rule Based Promotion",
+            "restrictions": null,
+            "startDate": null,
+            "title": "20% OFF + FREE SHIPPING ON YOUR FIRST ORDER!"
+        }
+    ],
+    "preferredCategory": "levi_clothing_men_sale_jeans_us",
+    "price": {
+        "code": null,
+        "currencyIso": "USD",
+        "formattedValue": "$56.98",
+        "hardPrice": 56.98,
+        "hardPriceFormattedValue": "$56.98",
+        "maxQuantity": null,
+        "minQuantity": null,
+        "priceType": "BUY",
+        "regularPrice": 89.5,
+        "regularPriceFormattedValue": "$89.50",
+        "softPrice": null,
+        "softPriceFormattedValue": null,
+        "value": 56.98
+    },
+    "productSchemaOrgMarkup": {
+        "aggregateRating": {
+            "entry": [
+                {
+                    "key": "@type",
+                    "value": "AggregateRating"
+                },
+                {
+                    "key": "ratingValue",
+                    "value": "4.0909"
+                },
+                {
+                    "key": "reviewCount",
+                    "value": "22"
+                }
+            ]
+        },
+        "brand": {
+            "entry": [
+                {
+                    "key": "@type",
+                    "value": "Thing"
+                },
+                {
+                    "key": "name",
+                    "value": "levi"
+                }
+            ]
+        },
+        "gtin12": "00193238256360",
+        "offers": {
+            "entry": [
+                {
+                    "key": "@type",
+                    "value": "Offer"
+                },
+                {
+                    "key": "url",
+                    "value": "https://www.levi.com/US/en_US/apparel/clothing/bottoms/501-93-straight-mens-jeans/p/798300018"
+                },
+                {
+                    "key": "priceCurrency",
+                    "value": "USD"
+                },
+                {
+                    "key": "price",
+                    "value": "56.98"
+                },
+                {
+                    "key": "availability",
+                    "value": "https://schema.org/InStock"
+                }
+            ]
+        }
+    },
+    "promotionalBadge": null,
+    "purchasable": true,
+    "seoMetaData": {
+        "metaDescription": "<p>our 501® ‘93 straight jeans are inspired by a fit that defined the culture a generation ago, bringing true early ‘90s style to a new generation. Your thrift-store...",
+        "metaH1": "501® '93 Straight Men's Jeans",
+        "metaTitle": "501® '93 Straight Men's Jeans - Light Wash | Levi's® US",
+        "robots": "index,follow"
+    },
+    "sizeGuide": "men-sizecharts-bottoms",
+    "soldIndividually": true,
+    "soldOutForever": false,
+    "summary": "",
+    "url": "/apparel/clothing/bottoms/501-93-straight-mens-jeans/p/798300018",
+    "variantLength": [
+        "30",
+        "32",
+        "34"
+    ],
+    "variantOptions": [
+        {
+            "code": "79830001802932",
+            "colorName": null,
+            "displaySizeDescription": "29W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 47,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256360",
+            "url": "/c//p/79830001802932",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803032",
+            "colorName": null,
+            "displaySizeDescription": "30W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 1,
+                "stockLevelStatus": "lowStock"
+            },
+            "upc": "00193238256414",
+            "url": "/c//p/79830001803032",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803034",
+            "colorName": null,
+            "displaySizeDescription": "30W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 42,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256421",
+            "url": "/c//p/79830001803034",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803130",
+            "colorName": null,
+            "displaySizeDescription": "31W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256469",
+            "url": "/c//p/79830001803130",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803132",
+            "colorName": null,
+            "displaySizeDescription": "31W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256483",
+            "url": "/c//p/79830001803132",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803134",
+            "colorName": null,
+            "displaySizeDescription": "31W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 49,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256506",
+            "url": "/c//p/79830001803134",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803230",
+            "colorName": null,
+            "displaySizeDescription": "32W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256544",
+            "url": "/c//p/79830001803230",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803232",
+            "colorName": null,
+            "displaySizeDescription": "32W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238175869",
+            "url": "/c//p/79830001803232",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803234",
+            "colorName": null,
+            "displaySizeDescription": "32W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 30,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256575",
+            "url": "/c//p/79830001803234",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803330",
+            "colorName": null,
+            "displaySizeDescription": "33W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256612",
+            "url": "/c//p/79830001803330",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803332",
+            "colorName": null,
+            "displaySizeDescription": "33W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256636",
+            "url": "/c//p/79830001803332",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803334",
+            "colorName": null,
+            "displaySizeDescription": "33W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 31,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256650",
+            "url": "/c//p/79830001803334",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803430",
+            "colorName": null,
+            "displaySizeDescription": "34W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256704",
+            "url": "/c//p/79830001803430",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803432",
+            "colorName": null,
+            "displaySizeDescription": "34W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256728",
+            "url": "/c//p/79830001803432",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803434",
+            "colorName": null,
+            "displaySizeDescription": "34W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 51,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256742",
+            "url": "/c//p/79830001803434",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803630",
+            "colorName": null,
+            "displaySizeDescription": "36W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256858",
+            "url": "/c//p/79830001803630",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803632",
+            "colorName": null,
+            "displaySizeDescription": "36W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256872",
+            "url": "/c//p/79830001803632",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803634",
+            "colorName": null,
+            "displaySizeDescription": "36W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 41,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256896",
+            "url": "/c//p/79830001803634",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803830",
+            "colorName": null,
+            "displaySizeDescription": "38W X 30L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256957",
+            "url": "/c//p/79830001803830",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803832",
+            "colorName": null,
+            "displaySizeDescription": "38W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238256971",
+            "url": "/c//p/79830001803832",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001803834",
+            "colorName": null,
+            "displaySizeDescription": "38W X 34L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 16,
+                "stockLevelStatus": "inStock"
+            },
+            "upc": "00193238256995",
+            "url": "/c//p/79830001803834",
+            "variantOptionQualifiers": null
+        },
+        {
+            "code": "79830001804032",
+            "colorName": null,
+            "displaySizeDescription": "40W X 32L",
+            "maxOrderQuantity": null,
+            "minOrderQuantity": null,
+            "priceData": {
+                "code": null,
+                "currencyIso": "USD",
+                "formattedValue": "$56.98",
+                "hardPrice": 56.98,
+                "hardPriceFormattedValue": "$56.98",
+                "maxQuantity": null,
+                "minQuantity": null,
+                "priceType": "BUY",
+                "regularPrice": 89.5,
+                "regularPriceFormattedValue": "$89.50",
+                "softPrice": null,
+                "softPriceFormattedValue": null,
+                "value": 56.98
+            },
+            "stock": {
+                "stockLevel": 0,
+                "stockLevelStatus": "outOfStock"
+            },
+            "upc": "00193238257053",
+            "url": "/c//p/79830001804032",
+            "variantOptionQualifiers": null
+        }
+    ],
+    "variantSize": null,
+    "variantType": "PC13Product",
+    "variantWaist": [
+        "29",
+        "30",
+        "31",
+        "32",
+        "33",
+        "34",
+        "36",
+        "38",
+        "40"
+    ]
+}
