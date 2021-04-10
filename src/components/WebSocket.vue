@@ -47,25 +47,25 @@
         :class="{'msg-line': true, 'in': msg.type === 'in'}"
         >
           <span v-if="msg.type === 'in'" class="external-msg in">
-            <img v-if="msg.img" :src="msg.img" class="msg-img"/>
+            <img v-if="msg.img" :src="msg.img" class="msg-img" @load="scrollMsgList"/>
             <span>{{msg.msg}}</span>
           </span>
           <span v-else class="external-msg out">
             <span class="msg-sender">{{msg.sender}}</span>
-            <img v-if="msg.img" :src="msg.img" class="msg-img"/>
+            <img v-if="msg.img" :src="msg.img" class="msg-img" @load="scrollMsgList"/>
             <span>{{msg.msg}}</span>
           </span>
         </li>
       </transition-group>
     </div>
   </div>
-  <div class="test-products">
-    <span>test product ids</span>
+  <div class="test-products" :class="{'on': showTestIds }">
+    <span @click="showTestIds = !showTestIds">test product ids</span>
     <div class="tops">
       <b>tops:</b> 196980006, 197060006, 287880003, 287880004, 196950008, 197540002, 197540003
     </div>
     <div class="bottoms">
-      <b>bottoms:</b> 188810412, 188820445, 196260276, 349640112, 177800038, 188810052
+      <b>bottoms:</b> 278890002, 188810412, 188820445, 196260276, 349640112, 177800038, 188810052
     </div>
   </div>
 </template>
@@ -86,12 +86,13 @@ export default {
     const messages = ref([]);
     const msgContainer = ref(null);
     const messageInput = ref(null);
+    const showTestIds = ref(false);
     const receivedImg = ref(null);
     const productsInput = ref(null);
     const message = ref("");
     const products = ref("");
     const showImages = ref(false);
-    const productIds = ref([188810412, 188820445, 196260276, 349640112, 177800038, 188810052,
+    const productIds = ref([278890002, 188810412, 188820445, 196260276, 349640112, 177800038, 188810052,
           196980006, 197060006, 287880003, 287880004, 196950008, 197540002, 197540003]);
 
     const { state } = userState();
@@ -187,9 +188,9 @@ export default {
       toDataURL(`https://lsco.scene7.com/is/image/lsco/${id}-front-pdp?$qv_desktop_bottoms$`)
       .then(dataUrl => {
         console.log('RESULT:', dataUrl);
+        messages.value.push({type: "in", img: dataUrl});
         const sender = state.value.userName;
         connection.send(JSON.stringify({ action: "img", img: dataUrl, sender, msg: `pc9: ${id}` }));
-        messages.value.push({type: "in", img: dataUrl});
         scrollMsgList();
       });
     }
@@ -223,7 +224,8 @@ export default {
       sendImg,
       receivedImg,
       showImages,
-      productIds
+      productIds,
+      showTestIds
     };
   },
 
@@ -273,21 +275,35 @@ export default {
 }
 
 .test-products {
-  position: fixed;
-  bottom: 0px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
   color: #a8a8a8;
-  max-width: 600px;
+  padding: 0 10px;
+  max-width: 200px;
+  max-height: 30px;
+  overflow: hidden;
   text-align: left;
-  .tops, .bottoms {
-    font-size: 12px;
-  }
   span {
     display: block;
+    border-bottom: 3px solid green;
     text-align: left;
     font-size: 12px;
     letter-spacing: 1.5px;
-    color: #ce0301;
     font-weight: bolder;
+    line-height: 26px;
+    text-align: center;
+    &::after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000000' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+      position: absolute;
+    }
+  }
+  &.on {
+    max-height: 400px;
+  }
+  .tops, .bottoms {
+    font-size: 12px;
+    margin: 0 0 10px 0;
   }
 }
 
@@ -374,6 +390,8 @@ export default {
           text-align: center;
           color: #5a9dff;
           position: relative;
+          width: 50px;
+          outline: none;
           top: -32px;
           left: -45px;
           // text-shadow: 1px 1px 1px #000;
@@ -387,6 +405,9 @@ export default {
           // );
           // box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
           // inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+          &:active {
+            transform: scale(1.2);
+          }
           &::after {
             // content: url("data:image/svg+xml, %3Csvg id='fi_3814305' enable-background='new 0 0 14 14' height='14' viewBox='0 0 512 512' width='14' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' data-v-3474b467=''%3E%3ClinearGradient id='SVGID_1_' gradientUnits='userSpaceOnUse' x1='302.017' x2='302.017' y1='511.999' y2='.001' data-v-3474b467=''%3E%3Cstop offset='0' stop-color='%235558ff' data-v-3474b467=''%3E%3C/stop%3E%3Cstop offset='1' stop-color='%2300c0ff' data-v-3474b467=''%3E%3C/stop%3E%3C/linearGradient%3E%3ClinearGradient id='SVGID_2_' gradientUnits='userSpaceOnUse' x1='196' x2='196' y1='331.001' y2='181.001' data-v-3474b467=''%3E%3Cstop offset='0' stop-color='%23addcff' data-v-3474b467=''%3E%3C/stop%3E%3Cstop offset='.5028' stop-color='%23eaf6ff' data-v-3474b467=''%3E%3C/stop%3E%3Cstop offset='1' stop-color='%23eaf6ff' data-v-3474b467=''%3E%3C/stop%3E%3C/linearGradient%3E%3Cg data-v-3474b467=''%3E%3Cg data-v-3474b467=''%3E%3Cg data-v-3474b467=''%3E%3Cpath d='m504.8 243.101-390-240.958c-5.4-3.3-12.301-2.701-17.401 1.199-4.799 4.2-6.599 11.1-4.499 17.1l82.5 220.558 126.599 15-126.599 15-82.5 220.6c-2.1 6-.3 12.9 4.499 17.1 5.005 3.892 12.278 4.399 17.401 1.199l390-241c4.499-2.999 7.2-7.8 7.2-12.9 0-5.097-2.701-9.898-7.2-12.898z' fill='url(%23SVGID_1_)' data-v-3474b467=''%3E%3C/path%3E%3C/g%3E%3C/g%3E%3Cg data-v-3474b467=''%3E%3Cg data-v-3474b467=''%3E%3Cpath d='m377 241.001h-201.599l5.698 15-5.698 15h201.599c8.401 0 15-6.599 15-15s-6.599-15-15-15zm-270 0h-92c-8.291 0-15 6.709-15 15s6.709 15 15 15h92c8.291 0 15-6.709 15-15s-6.709-15-15-15zm-30 60h-62c-8.291 0-15 6.709-15 15s6.709 15 15 15h62c8.291 0 15-6.709 15-15s-6.709-15-15-15zm-62-90h62c8.291 0 15-6.709 15-15s-6.709-15-15-15h-62c-8.291 0-15 6.709-15 15s6.709 15 15 15z' fill='url(%23SVGID_2_)' data-v-3474b467=''%3E%3C/path%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
             content: url("data:image/svg+xml,%3Csvg version='1.1' id='fi_60525' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='30' height='24' viewBox='0 0 535.5 535.5' style='fill:%2384DBFF; background:new 0 0 535.5 535.5;' xml:space='preserve'%3E%3Cg%3E%3Cg id='send'%3E%3Cpolygon points='0,497.25 535.5,267.75 0,38.25 0,216.75 382.5,267.75 0,318.75 '%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E");
@@ -400,10 +421,6 @@ export default {
       }
       .styled:hover {
           // background-color: rgba(255, 0, 0, 1);
-      }
-      .styled:active {
-          box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
-          inset 2px 2px 3px rgba(0, 0, 0, 0.6);
       }
     }
     .ws-container {
@@ -458,8 +475,10 @@ export default {
           font-weight: 800;
         }
         img {
-          width: 100px;
           border-radius: 10px;
+          height: 120px;
+          margin: 0 auto;
+          display: block;
         }
         &.out {
           left: 20px;
