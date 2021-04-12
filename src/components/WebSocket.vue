@@ -52,7 +52,11 @@
           </span>
           <span v-else class="external-msg out">
             <span class="msg-sender">{{msg.sender}}</span>
-            <img v-if="msg.img" :src="msg.img" class="msg-img" @load="scrollMsgList"/>
+            <picture v-if="msg.img" @load="scrollMsgList" class="msg-img">
+              <source :src="msg.img" type="image/webp">
+              <source :src="msg.img" type="image/jpeg"> 
+              <img :src="msg.img" alt="Alt Text!">
+            </picture>
             <span>{{msg.msg}}</span>
           </span>
         </li>

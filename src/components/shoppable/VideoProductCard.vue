@@ -5,7 +5,7 @@
       <div class="product-img">
         <img :src="product.images[3].url" />
       </div>
-      <div class="product-details">
+      <div class="product-details" :class="{'separator': separator}">
         <div class="product-name">{{ product.name }}</div>
         <div class="color">Color: {{ product.colorName }}</div>
         <div>{{ product.price.formattedValue }}</div>
@@ -24,6 +24,10 @@ export default {
         type: Boolean,
         default: false,
     },
+    separator: {
+      type: Boolean,
+      default: false,
+    }
   },
 
   setup(props, {emit}) {
@@ -78,13 +82,15 @@ export default {
 
 .product-card {
   width: 100%;
-  margin: 5px 0;
   display: grid;
   grid-gap: 5px;
   background: white;
   grid-template-columns: 90px 1fr;
   grid-template-rows: 90px;
   .product-details {
+    &.separator {
+      border-top: 2px solid #d6d6d6;
+    }
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -93,7 +99,6 @@ export default {
     font-weight: 400;
     text-align: left;
     line-height: 16px;
-    border-top: 2px solid #d6d6d6;
   }
   .product-img {
     // z-index: 100;

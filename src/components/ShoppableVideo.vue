@@ -35,10 +35,11 @@
           class="product-group" 
           :key="collection.hash">
           <ul >
-            <li v-for="code in collection.products" :key="code">
+            <li v-for="(code, index) in collection.products" :key="code">
               <video-product-card
                 :code="code"
                 :ref="`vpc${code}`"
+                :separator="index > 0"
                 @open-modal="openModal">
               </video-product-card>
             </li>
@@ -152,6 +153,8 @@ export default {
         });
         productCollection.value.unshift(found);
       }
+      const el = shoppableList.value
+      el.scrollTop = 0;
     }
 
     const playVideo = () => {
@@ -366,7 +369,7 @@ export default {
     flex-basis: 24vw;
     overflow-y: auto;
     width: 24vw;
-    height: 100%;
+    // height: 100%;
     background: black;
     // position: relative;
     // left: -340px;
@@ -378,6 +381,9 @@ export default {
       }
       ul {
         margin: 0;
+        li {
+          padding: 3px;
+        }
       }
       margin: 25px 15px 0 10px;
       background: #ffffff;
