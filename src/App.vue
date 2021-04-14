@@ -37,7 +37,6 @@ export default {
 }
 
 .page {
-  max-width: 90vw;
   display: flex;
   margin: auto;
   flex-direction: column;

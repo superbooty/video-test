@@ -22,9 +22,6 @@
           label="Key Stage 2"
         />
       </video>
-      <div class="admin-console" @click="toggleAdmin()">Messaging Console
-        <div class="menu-expander" :class="{'opened': showAdmin}"></div>
-      </div>
     </div>
     <div id="shoppy" class="shoppable-products" ref="shoppableList">
       <div v-if="!productCollection" class="no-products">
@@ -48,6 +45,9 @@
       </transition-group>
     </div>
     <add-to-bag-modal v-if="atcCode" :code="atcCode" @close-modal="closeModal"/>
+  </div>
+  <div class="admin-console" @click="toggleAdmin()">Messaging Console
+    <div class="menu-expander" :class="{'opened': showAdmin}"></div>
   </div>
   <web-socket v-if="showAdmin" @customCue="customCueBuilder" @addToBucket="addToBucket"></web-socket>
 </template>
@@ -277,59 +277,65 @@ export default {
   transition: transform 1s;
 }
 
-.shoppable-container {
-    box-sizing: border-box;
-    display: flex;
-    flex: 0 1 auto;
-    flex-direction: row;
-    position: relative;
-    max-height: 420px;
-  .admin-console {
-    position: relative;
-    top: -6px;
-    left: 10px;
-    width: 130px;
-    background: #000000;
-    color: white;
-    font-size: 12px;
-    // End
-    &:after {
-      position: absolute;
-      z-index: -1;
-      content: "";
-      right: -5%;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      background-color: inherit;
-      transform: skewX(-10deg);
-    }
-    &:before {
-      z-index: -1;
-      content: "";
-      position: absolute;
-      left: -5%;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      background-color: inherit;
-      transform: skewX(10deg);
-    }
-    .menu-expander {
-      height: 20px;
+.admin-console {
+  position: relative;
+  left: 10px;
+  width: 130px;
+  background: #000000;
+  color: white;
+  font-size: 12px;
+  // End
+  &:after {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: -5%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    transform: skewX(-10deg);
+  }
+  &:before {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: -5%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    transform: skewX(10deg);
+  }
+  .menu-expander {
+    height: 20px;
+    transition-duration: .250s;
+    &.opened {
+      transform: rotate(180deg);
       transition-duration: .250s;
-      &.opened {
-        transform: rotate(180deg);
-        transition-duration: .250s;
-      }
-      &:after {
-        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
-        transition-property: transform;
-        transform-origin: 22px 14px;
-        transition-duration: .250s;
-      }
+    }
+    &:after {
+      content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ffffff' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E");
+      transition-property: transform;
+      transform-origin: 22px 14px;
+      transition-duration: .250s;
     }
   }
+}
+
+.shoppable-container {
+  @media (max-width: 508px) {
+    .video-container, .shoppable-products {
+      min-width: 100%;
+    }
+  }
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  max-height: 840px;
   .external-msg {
     font-family: "Helvetica-Now-Text-Regular";
     font-size: 20px;
@@ -346,8 +352,8 @@ export default {
   }
   .video-container {
     flex: 0 0 auto;
-    flex-basis: 56vw;
-    width: 56vw;
+    flex-basis: 50vw;
+    min-height: 340px;
     background: black;
     video {
       object-fit: cover;
@@ -366,10 +372,9 @@ export default {
     }
   }
   .shoppable-products {
-    flex-basis: 24vw;
-    overflow-y: auto;
-    width: 24vw;
-    // height: 100%;
+    width: 30vw;
+    flex-basis: 40vw;
+    min-height: 340px;
     background: black;
     // position: relative;
     // left: -340px;

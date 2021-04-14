@@ -1,33 +1,33 @@
 <template>
   <div class="comm-container">
     <div class="broadcaster">
-      <div class="text-img-msg">
-        <div class="attach-img" @click="showImages = !showImages">
-          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTQuMzc4bC01LjY0MSA1LjY0Yy0uNjU0LjY1NS0xLjUxMy45ODItMi4zNzQuOTgyLTIuOTcyIDAtNC40OTMtMy42MTMtMi4zNzQtNS43MzFsNS41MzktNS41NGMuNDg4LS40ODYgMS4xMjYtLjcyOSAxLjc2Ni0uNzI5IDEuNDk0IDAgMi40OTggMS4yMzMgMi40OTggMi41MTkgMCAuNjEtLjIyNyAxLjIzMi0uNzM0IDEuNzRsLTQuOTE4IDQuOTE4Yy0uNjM0LjYzNC0xLjY2NS42MzQtMi4yOTkgMC0uNjMzLS42MzMtLjYzMy0xLjY2NCAwLTIuMjk4bDMuOTcxLTMuOTcuODI4LjgyOC0zLjk3MSAzLjk3Yy0uMTc4LjE3Ny0uMTc4LjQ2NiAwIC42NDNzLjQ2NS4xNzcuNjQzIDBsNC45MTktNC45MThjLjUxNy0uNTE3LjUxNy0xLjM1NyAwLTEuODc0LS41MTctLjUxNy0xLjM1Ni0uNTE3LTEuODc0IDBsLTUuNTM5IDUuNTRjLS44NTQuODUzLS44NTQgMi4yNDEgMCAzLjA5My44NTIuODUzIDIuMjQuODUzIDMuMDkzIDBsNS42NC01LjY0LjgyNy44Mjd6bS0xNy01Ljg3OGMwLS44MjgtLjY3Mi0xLjUtMS41LTEuNXMtMS41LjY3Mi0xLjUgMS41YzAgLjgyOS42NzIgMS41IDEuNSAxLjVzMS41LS42NzEgMS41LTEuNXptNy41NyAzLjAxM2wtMS41Ny0yLjUxMy0yLjUyIDQtMi40OC0xLjk2LTQgNS45Nmg2LjY5NGMuMTQ0LTEuMTM5LjYzLTIuMjQyIDEuNTAzLTMuMTE0bDIuMzczLTIuMzczem0tMy43NTQgNy40ODdoLTguODE2di0xNGgxOHYyLjEyNmMuMjk5LS4wNjIuNjA0LS4wOTYuOTE2LS4wOTYuMzcxIDAgLjczMi4wNiAxLjA4NC4xNDd2LTQuMTc3aC0yMnYxOGgxMS44MThjLS40ODItLjYwNS0uODE4LTEuMjgzLTEuMDAyLTJ6Ii8+PC9zdmc+" />
-        </div>
-        <div class="">
-          <label>text message</label>
-          <input
-            class="msg txt-input"
-            v-model="message"
-            ref="messageInput"
-            type="text"
-            required
-            placeholder="Enter a message to broadcast"
-          />
-        </div>
+      <div class="attach-img" @click="showImages = !showImages">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTQuMzc4bC01LjY0MSA1LjY0Yy0uNjU0LjY1NS0xLjUxMy45ODItMi4zNzQuOTgyLTIuOTcyIDAtNC40OTMtMy42MTMtMi4zNzQtNS43MzFsNS41MzktNS41NGMuNDg4LS40ODYgMS4xMjYtLjcyOSAxLjc2Ni0uNzI5IDEuNDk0IDAgMi40OTggMS4yMzMgMi40OTggMi41MTkgMCAuNjEtLjIyNyAxLjIzMi0uNzM0IDEuNzRsLTQuOTE4IDQuOTE4Yy0uNjM0LjYzNC0xLjY2NS42MzQtMi4yOTkgMC0uNjMzLS42MzMtLjYzMy0xLjY2NCAwLTIuMjk4bDMuOTcxLTMuOTcuODI4LjgyOC0zLjk3MSAzLjk3Yy0uMTc4LjE3Ny0uMTc4LjQ2NiAwIC42NDNzLjQ2NS4xNzcuNjQzIDBsNC45MTktNC45MThjLjUxNy0uNTE3LjUxNy0xLjM1NyAwLTEuODc0LS41MTctLjUxNy0xLjM1Ni0uNTE3LTEuODc0IDBsLTUuNTM5IDUuNTRjLS44NTQuODUzLS44NTQgMi4yNDEgMCAzLjA5My44NTIuODUzIDIuMjQuODUzIDMuMDkzIDBsNS42NC01LjY0LjgyNy44Mjd6bS0xNy01Ljg3OGMwLS44MjgtLjY3Mi0xLjUtMS41LTEuNXMtMS41LjY3Mi0xLjUgMS41YzAgLjgyOS42NzIgMS41IDEuNSAxLjVzMS41LS42NzEgMS41LTEuNXptNy41NyAzLjAxM2wtMS41Ny0yLjUxMy0yLjUyIDQtMi40OC0xLjk2LTQgNS45Nmg2LjY5NGMuMTQ0LTEuMTM5LjYzLTIuMjQyIDEuNTAzLTMuMTE0bDIuMzczLTIuMzczem0tMy43NTQgNy40ODdoLTguODE2di0xNGgxOHYyLjEyNmMuMjk5LS4wNjIuNjA0LS4wOTYuOTE2LS4wOTYuMzcxIDAgLjczMi4wNiAxLjA4NC4xNDd2LTQuMTc3aC0yMnYxOGgxMS44MThjLS40ODItLjYwNS0uODE4LTEuMjgzLTEuMDAyLTJ6Ii8+PC9zdmc+" />
       </div>
-      <label>products</label>
-      <input
-        class="msg"
-        v-model="products"
-        ref="productsInput"
-        type="text"
-        required
-        pattern="^\d{9}(?:|, \d{9})+$"
-        placeholder="Enter productIds separated by commas"
-        @input="inputHandler"
-      />
+      <div class="text-img-msg">
+        <label>text message</label>
+        <input
+          class="msg txt-input"
+          v-model="message"
+          ref="messageInput"
+          type="text"
+          required
+          placeholder="Enter a message to broadcast"
+        />
+      </div>
+      <div class="text-img-msg">
+        <label>products</label>
+        <input
+          class="msg"
+          v-model="products"
+          ref="productsInput"
+          type="text"
+          required
+          pattern="^\d{9}(?:|, \d{9})+$"
+          placeholder="Enter productIds separated by commas"
+          @input="inputHandler"
+        />
+      </div>
       <button class="favorite styled" type="button"
         @click="sendMsg">Send </button>
       <div class="img-picker" :class="{'on': showImages}">
@@ -312,11 +312,17 @@ export default {
 }
 
 .comm-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: start;
+  @media (max-width: 508px) {
+    .broadcaster, .ws-container {
+      min-width: 100%;
+    }
+  }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
   margin-top: 10px;
   .broadcaster {
+      flex-basis: 50vw;
       margin: 40px 0;
       text-align: left;
       position: relative;
@@ -354,9 +360,6 @@ export default {
         }
       }
       .text-img-msg {
-        display: flex;
-        label {
-        }
       }
       .attach-img {
         margin: auto 0;
@@ -373,12 +376,8 @@ export default {
         left: 20px;
       }
       .msg {
-        &.txt-input {
-          min-width: 375px;
-        }
-        min-width: 400px;
+        min-width: calc(100% - 4px);
         line-height: 28px;
-        margin: 5px 10px;
         font-size: 14px;
         text-indent: 5px;
         &::placeholder {
@@ -393,11 +392,11 @@ export default {
           font-size: 12px;
           text-align: center;
           color: #5a9dff;
-          position: relative;
+          position: ABSOLUTE;
           width: 50px;
           outline: none;
-          top: -32px;
-          left: -45px;
+          top: 132px;
+          right: 10px;
           // text-shadow: 1px 1px 1px #000;
           // border-radius: 10px;
           // background-color: rgba(220, 0, 0, 1);
@@ -428,13 +427,13 @@ export default {
       }
     }
     .ws-container {
+      flex-basis: 40vw;
       margin: 0 auto;
       max-height: 350px;
       overflow-y: auto;
       ul {
         // margin-bottom: 40px;
         padding: 0;
-        width: 400px;
         text-align: left;
         list-style-type: none;
         li {
