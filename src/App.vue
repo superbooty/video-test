@@ -40,6 +40,5 @@ export default {
   display: flex;
   margin: auto;
   flex-direction: column;
-  height: 100vh;
 }
 </style>

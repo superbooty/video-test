@@ -46,10 +46,7 @@
     </div>
     <add-to-bag-modal v-if="atcCode" :code="atcCode" @close-modal="closeModal"/>
   </div>
-  <div class="admin-console" @click="toggleAdmin()">Messaging Console
-    <div class="menu-expander" :class="{'opened': showAdmin}"></div>
-  </div>
-  <web-socket v-if="showAdmin" @customCue="customCueBuilder" @addToBucket="addToBucket"></web-socket>
+  <web-socket v-if="state.showMsgConsole" @customCue="customCueBuilder" @addToBucket="addToBucket"></web-socket>
 </template>
 
 <script>
@@ -57,6 +54,8 @@ import VideoProductCard from "../components/shoppable/VideoProductCard.vue";
 import WebSocket from "./WebSocket.vue";
 import { loadScript } from "@/utils/loadScripts";
 import md5 from 'crypto-js/md5';
+import userState from "@/state/userState";
+
 const AddToBagModal = defineAsyncComponent(
   () => import('../components/shoppable/AddToBagModal.vue')
 );
@@ -66,6 +65,8 @@ export default {
   setup(props) {
     console.log("Item Selector PROPS :: ", props);
 
+    const { state } = userState();
+
     const scrollItemToView = ref(null);
     const videoPlayer = ref(null);
     const productCollection = ref([]);
@@ -74,7 +75,6 @@ export default {
     const videoPoster = ref(null);
     const player = ref(null);
     const shoppableList = ref(null);
-    const showAdmin = ref(false);
     const atcCode = ref(null);
 
     const url =
@@ -109,10 +109,6 @@ export default {
         return el.hash === collectionId;
       });
     };
-
-    const toggleAdmin = () => {
-      showAdmin.value = !showAdmin.value;
-    }
 
     const openModal = (code) => {
       console.log("CALLED OPEN MODAL :: ", code);
@@ -250,12 +246,11 @@ export default {
       playVideo,
       shoppableList,
       videoPlayer,
-      toggleAdmin,
-      showAdmin,
       atcCode,
       openModal,
       closeModal,
-      addToBucket
+      addToBucket,
+      state
     };
   },
   

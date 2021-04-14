@@ -5,6 +5,7 @@ const state = ref({
     userName: null,
     email: null,
     registered: false,
+    showMsgConsole: false,
 });
 
 export default function userState() {
@@ -26,6 +27,13 @@ export default function userState() {
             console.log("user has already registered :: ");
         }
         return true;
+    }
+    const toggleMsgConsole = () => {
+        // check if the user has already been registered
+        // for a real validation this would be checked via
+        // an API
+        state.value.showMsgConsole = !state.value.showMsgConsole;
+        return true;
     }   
-    return {state, register}
+    return {state, register, toggleMsgConsole}
 }
