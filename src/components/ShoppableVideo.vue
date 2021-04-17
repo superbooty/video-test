@@ -382,7 +382,7 @@ export default {
       &:nth-child(1) {
         margin: 0 15px 0 10px;
         background: #ffffff;
-        border-left: 3px solid red;
+        border-left: 4px solid #ff0101;
       }
       ul {
         margin: 0;
@@ -393,7 +393,7 @@ export default {
       width: 320px;
       margin: 25px 15px 0 10px;
       background: #ffffff;
-      border-left: 3px solid #cfcfcf;
+      border-left: 4px solid #cfcfcf;
       box-shadow: 6px 6px 2px 0px #bdbdbd;
     }
     ul {
