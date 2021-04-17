@@ -15,6 +15,7 @@
           placeholder="Enter a message to broadcast"
         />
       </div>
+      <div class="condition"> or </div>
       <div class="text-img-msg">
         <label>products</label>
         <input
@@ -322,7 +323,7 @@ export default {
   align-items: flex-start;
   margin-top: 10px;
   .broadcaster {
-      flex-basis: 50vw;
+      flex-basis: 476px;
       margin: 40px 0;
       text-align: left;
       position: relative;
@@ -367,23 +368,30 @@ export default {
       label {
         position: relative;
         top: 10px;
-        display: block;
+        padding: 3px 5px;
         font-size: 12px;
         background: white;
         max-width: 90px;
         text-align: center;
         color: #74acff;
-        left: 20px;
+        left: 10px;
       }
       .msg {
         min-width: calc(100% - 4px);
-        line-height: 28px;
+        line-height: 34px;
         font-size: 14px;
         text-indent: 5px;
         &::placeholder {
           color: #b8b7b7;
           font-size: 14px;
         }
+      }
+      .condition {
+        position: absolute;
+        width: 100%;
+        line-height: 24px;
+        font-size: 12px;
+        text-align: center;
       }
       .styled {
           border: 0;
@@ -395,7 +403,7 @@ export default {
           position: ABSOLUTE;
           width: 50px;
           outline: none;
-          top: 132px;
+          top: 158px;
           right: 10px;
           // text-shadow: 1px 1px 1px #000;
           // border-radius: 10px;

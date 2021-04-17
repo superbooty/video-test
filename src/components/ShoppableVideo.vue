@@ -23,26 +23,28 @@
         />
       </video>
     </div>
-    <div id="shoppy" class="shoppable-products" ref="shoppableList">
+    <div id="shoppy" class="shoppable-products" >
       <div v-if="!productCollection" class="no-products">
         <span>This video is shoppable</span>
       </div>
-      <transition-group v-else name="shuffle" tag="ul">
-        <li v-for="collection in productCollection"
-          class="product-group" 
-          :key="collection.hash">
-          <ul >
-            <li v-for="(code, index) in collection.products" :key="code">
-              <video-product-card
-                :code="code"
-                :ref="`vpc${code}`"
-                :separator="index > 0"
-                @open-modal="openModal">
-              </video-product-card>
-            </li>
-          </ul>
-        </li>
-      </transition-group>
+      <div v-else class="group-scroll" ref="shoppableList">
+        <transition-group name="shuffle" tag="ul">
+          <li v-for="collection in productCollection"
+            class="product-group" 
+            :key="collection.hash">
+            <ul>
+              <li v-for="(code, index) in collection.products" :key="code">
+                <video-product-card
+                  :code="code"
+                  :ref="`vpc${code}`"
+                  :separator="index > 0"
+                  @open-modal="openModal">
+                </video-product-card>
+              </li>
+            </ul>
+          </li>
+        </transition-group>
+      </div>
     </div>
     <add-to-bag-modal v-if="atcCode" :code="atcCode" @close-modal="closeModal"/>
   </div>
@@ -60,7 +62,7 @@ const AddToBagModal = defineAsyncComponent(
   () => import('../components/shoppable/AddToBagModal.vue')
 );
 
-import { ref, computed, onMounted, defineAsyncComponent} from "vue";
+import { ref, computed, onMounted, defineAsyncComponent } from "vue";
 export default {
   setup(props) {
     console.log("Item Selector PROPS :: ", props);
@@ -326,6 +328,8 @@ export default {
   flex-wrap: wrap;
   position: relative;
   max-height: 840px;
+  justify-content: center;
+  border-bottom: 1px solid;
   .external-msg {
     font-family: "Helvetica-Now-Text-Regular";
     font-size: 20px;
@@ -344,7 +348,7 @@ export default {
     flex: 0 0 auto;
     flex-basis: 42vw;
     height: 400px;
-    min-width: 360px;
+    min-width: 476px;
     background: black;
     video {
       object-fit: cover;
@@ -366,12 +370,14 @@ export default {
     display: flex;
     width: 30vw;
     max-height: 400px;
-    min-width: 360px;
+    min-width: 476px;
     justify-content: center;
     background: black;
-    overflow-y: auto;
     // position: relative;
     // left: -340px;
+    .group-scroll {
+      overflow-y: auto;
+    }
     .product-group {
       &:nth-child(1) {
         margin: 0 15px 0 10px;

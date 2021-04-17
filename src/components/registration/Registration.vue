@@ -100,7 +100,8 @@ export default {
   h2 {
     margin: 0 0 20px;
   }
-  width: 500px;
+  min-width: 320px;
+  max-width: 500px;
   border: 1px solid #cccccc;
   background-color: #ffffff;
   margin: auto;
