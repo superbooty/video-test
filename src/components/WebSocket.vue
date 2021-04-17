@@ -324,7 +324,7 @@ export default {
   margin-top: 10px;
   .broadcaster {
       flex-basis: 476px;
-      margin: 40px 0;
+      margin: 0 0 20px 0;
       text-align: left;
       position: relative;
       // display: grid;

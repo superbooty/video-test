@@ -1,9 +1,10 @@
 <template>
   <div id="app">
     <section class="header">
-      <span class="menu-lbl" :class="{'active': showMenu}" @click="showMenu = !showMenu">
+      <span class="menu-lbl" @click="showMenu = !showMenu">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgNmgtMTN2LTRoMTN2NHptMCA0aC0xM3Y0aDEzdi00em0wIDhoLTEzdjRoMTN2LTR6bTMtOGw0IDUuMDc1IDQtNS4wNzVoLTh6Ii8+PC9zdmc+">
       </span>
+      <span v-if="state.showMsgConsole" class="comm" @click="toggleAdmin"></span>
       <!-- <div class="menu-btn" :class="{'active': showMenu}" @click="showMenu = !showMenu"></div> -->
       <!-- <img class="menu-btn" :class="{'active': showMenu}" @click="showMenu = !showMenu"
         src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' height='24' viewBox='0 0 24 24' width='24'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z'/%3E%3C/svg%3E"/> -->
@@ -35,6 +36,7 @@ export default {
 
     const toggleAdmin = () => {
       toggleMsgConsole();
+      showMenu.value = false;
     }
 
     return {
@@ -69,6 +71,16 @@ export default {
   height: 42px;
   font-size: 12px;
   border-bottom: 1px solid #d0d0d0;
+  .comm {
+    position: absolute;
+    left: 60px;
+    top: 12px;
+    line-height: 24px;
+    font-size: 20px;
+    &::after {
+      content: "⇄";
+    }
+  }
   .menu-lbl {
     font-size: 12px;
     position: absolute;
@@ -77,8 +89,7 @@ export default {
     top: 4px;
     left: 12px;
     padding: 8px;
-    border-radius: 30px;
-    background: #e7e7e7;
+    border-right: 1px solid #dcdcdc;
     img {
       height: 18px;
     }

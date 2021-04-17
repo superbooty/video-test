@@ -376,7 +376,7 @@ export default {
     // left: -340px;
     .group-scroll {
       overflow-y: auto;
-      margin: 8px;
+      margin: 8px 0;
     }
     .product-group {
       &:nth-child(1) {
@@ -390,7 +390,7 @@ export default {
           padding: 3px;
         }
       }
-      width: 320px;
+      max-width: 320px;
       margin: 25px 15px 0 10px;
       background: #ffffff;
       border-left: 4px solid #cfcfcf;
