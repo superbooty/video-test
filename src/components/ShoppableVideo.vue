@@ -329,7 +329,6 @@ export default {
   position: relative;
   max-height: 840px;
   justify-content: center;
-  border-bottom: 1px solid;
   .external-msg {
     font-family: "Helvetica-Now-Text-Regular";
     font-size: 20px;
@@ -377,6 +376,7 @@ export default {
     // left: -340px;
     .group-scroll {
       overflow-y: auto;
+      margin: 8px;
     }
     .product-group {
       &:nth-child(1) {
@@ -397,6 +397,7 @@ export default {
       box-shadow: 6px 6px 2px 0px #bdbdbd;
     }
     ul {
+      margin: 0;
       padding: 0;
       list-style-type: none;
     }
