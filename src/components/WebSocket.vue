@@ -1,8 +1,9 @@
 <template>
   <div class="comm-container">
     <div class="broadcaster">
-      <div class="attach-img" @click="showImages = !showImages">
-        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTQuMzc4bC01LjY0MSA1LjY0Yy0uNjU0LjY1NS0xLjUxMy45ODItMi4zNzQuOTgyLTIuOTcyIDAtNC40OTMtMy42MTMtMi4zNzQtNS43MzFsNS41MzktNS41NGMuNDg4LS40ODYgMS4xMjYtLjcyOSAxLjc2Ni0uNzI5IDEuNDk0IDAgMi40OTggMS4yMzMgMi40OTggMi41MTkgMCAuNjEtLjIyNyAxLjIzMi0uNzM0IDEuNzRsLTQuOTE4IDQuOTE4Yy0uNjM0LjYzNC0xLjY2NS42MzQtMi4yOTkgMC0uNjMzLS42MzMtLjYzMy0xLjY2NCAwLTIuMjk4bDMuOTcxLTMuOTcuODI4LjgyOC0zLjk3MSAzLjk3Yy0uMTc4LjE3Ny0uMTc4LjQ2NiAwIC42NDNzLjQ2NS4xNzcuNjQzIDBsNC45MTktNC45MThjLjUxNy0uNTE3LjUxNy0xLjM1NyAwLTEuODc0LS41MTctLjUxNy0xLjM1Ni0uNTE3LTEuODc0IDBsLTUuNTM5IDUuNTRjLS44NTQuODUzLS44NTQgMi4yNDEgMCAzLjA5My44NTIuODUzIDIuMjQuODUzIDMuMDkzIDBsNS42NC01LjY0LjgyNy44Mjd6bS0xNy01Ljg3OGMwLS44MjgtLjY3Mi0xLjUtMS41LTEuNXMtMS41LjY3Mi0xLjUgMS41YzAgLjgyOS42NzIgMS41IDEuNSAxLjVzMS41LS42NzEgMS41LTEuNXptNy41NyAzLjAxM2wtMS41Ny0yLjUxMy0yLjUyIDQtMi40OC0xLjk2LTQgNS45Nmg2LjY5NGMuMTQ0LTEuMTM5LjYzLTIuMjQyIDEuNTAzLTMuMTE0bDIuMzczLTIuMzczem0tMy43NTQgNy40ODdoLTguODE2di0xNGgxOHYyLjEyNmMuMjk5LS4wNjIuNjA0LS4wOTYuOTE2LS4wOTYuMzcxIDAgLjczMi4wNiAxLjA4NC4xNDd2LTQuMTc3aC0yMnYxOGgxMS44MThjLS40ODItLjYwNS0uODE4LTEuMjgzLTEuMDAyLTJ6Ii8+PC9zdmc+" />
+      <div class="attach-img">
+        <img @click="showImages = !showImages"
+          src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMjQgMTQuMzc4bC01LjY0MSA1LjY0Yy0uNjU0LjY1NS0xLjUxMy45ODItMi4zNzQuOTgyLTIuOTcyIDAtNC40OTMtMy42MTMtMi4zNzQtNS43MzFsNS41MzktNS41NGMuNDg4LS40ODYgMS4xMjYtLjcyOSAxLjc2Ni0uNzI5IDEuNDk0IDAgMi40OTggMS4yMzMgMi40OTggMi41MTkgMCAuNjEtLjIyNyAxLjIzMi0uNzM0IDEuNzRsLTQuOTE4IDQuOTE4Yy0uNjM0LjYzNC0xLjY2NS42MzQtMi4yOTkgMC0uNjMzLS42MzMtLjYzMy0xLjY2NCAwLTIuMjk4bDMuOTcxLTMuOTcuODI4LjgyOC0zLjk3MSAzLjk3Yy0uMTc4LjE3Ny0uMTc4LjQ2NiAwIC42NDNzLjQ2NS4xNzcuNjQzIDBsNC45MTktNC45MThjLjUxNy0uNTE3LjUxNy0xLjM1NyAwLTEuODc0LS41MTctLjUxNy0xLjM1Ni0uNTE3LTEuODc0IDBsLTUuNTM5IDUuNTRjLS44NTQuODUzLS44NTQgMi4yNDEgMCAzLjA5My44NTIuODUzIDIuMjQuODUzIDMuMDkzIDBsNS42NC01LjY0LjgyNy44Mjd6bS0xNy01Ljg3OGMwLS44MjgtLjY3Mi0xLjUtMS41LTEuNXMtMS41LjY3Mi0xLjUgMS41YzAgLjgyOS42NzIgMS41IDEuNSAxLjVzMS41LS42NzEgMS41LTEuNXptNy41NyAzLjAxM2wtMS41Ny0yLjUxMy0yLjUyIDQtMi40OC0xLjk2LTQgNS45Nmg2LjY5NGMuMTQ0LTEuMTM5LjYzLTIuMjQyIDEuNTAzLTMuMTE0bDIuMzczLTIuMzczem0tMy43NTQgNy40ODdoLTguODE2di0xNGgxOHYyLjEyNmMuMjk5LS4wNjIuNjA0LS4wOTYuOTE2LS4wOTYuMzcxIDAgLjczMi4wNiAxLjA4NC4xNDd2LTQuMTc3aC0yMnYxOGgxMS44MThjLS40ODItLjYwNS0uODE4LTEuMjgzLTEuMDAyLTJ6Ii8+PC9zdmc+" />
       </div>
       <div class="text-img-msg">
         <label>text message</label>
@@ -313,18 +314,15 @@ export default {
 }
 
 .comm-container {
-  @media (max-width: 508px) {
-    .broadcaster, .ws-container {
-      min-width: 100%;
-    }
-  }
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   margin-top: 10px;
+  justify-content: center;
   .broadcaster {
-      flex-basis: 476px;
-      margin: 0 0 20px 0;
+      flex-basis: 42vw;
+      min-width: 476px;
+      margin: 0 0 40px 0;
       text-align: left;
       position: relative;
       // display: grid;
@@ -332,15 +330,18 @@ export default {
       // grid-row-gap: 10px;
       .img-picker {
         position: absolute;
-        top: 10px;
-        left: 30px;
+        top: 24px;
+        left: 0px;
         max-width: 0px;
         background: white;
         transition: max-width .250s ease-in;
         &.on {
           padding: 0 10px;
           border: 1px solid #e6e6e6;
-          max-width: 500px;
+          @media (max-width: 508px) {
+            max-width: calc(100% - 18px);
+          }
+          max-width: 460px;
         }
         ul {
           display: flex;
@@ -378,7 +379,7 @@ export default {
       }
       .msg {
         min-width: calc(100% - 4px);
-        line-height: 34px;
+        line-height: 38px;
         font-size: 14px;
         text-indent: 5px;
         &::placeholder {
@@ -403,7 +404,7 @@ export default {
           position: ABSOLUTE;
           width: 50px;
           outline: none;
-          top: 158px;
+          top: 168px;
           right: 10px;
           // text-shadow: 1px 1px 1px #000;
           // border-radius: 10px;
@@ -435,9 +436,9 @@ export default {
       }
     }
     .ws-container {
-      flex-basis: 40vw;
-      margin: 0 auto;
+      flex-basis: 42vw;
       max-height: 350px;
+      min-width: 476px;
       overflow-y: auto;
       ul {
         // margin-bottom: 40px;
@@ -523,6 +524,11 @@ export default {
             clear: both;
           }
         }
+      }
+    }
+    @media (max-width: 508px) {
+      .broadcaster, .ws-container {
+        min-width: 100%;
       }
     }
   }

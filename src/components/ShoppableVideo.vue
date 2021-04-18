@@ -62,7 +62,7 @@ const AddToBagModal = defineAsyncComponent(
   () => import('../components/shoppable/AddToBagModal.vue')
 );
 
-import { ref, computed, onMounted, defineAsyncComponent } from "vue";
+import { ref, computed, onMounted, watch, defineAsyncComponent } from "vue";
 export default {
   setup(props) {
     console.log("Item Selector PROPS :: ", props);
@@ -100,7 +100,7 @@ export default {
         return response.json();
       })
       .then((data) => {
-        // videoSrc.value = data.entries[0].video_url;
+        videoSrc.value = data.entries[0].video_url;
         videoPoster.value = data.entries[0].video_poster_url;
         metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
       });
@@ -156,9 +156,11 @@ export default {
     }
 
     const playVideo = () => {
-      player.value.load(
-        "https://assets.contentstack.io/v3/assets/bltab687eb09ed92451/blt0516a2ddf86d32f7/60256c5f5f9b2812764c3de9/levisSeasonalSample.mp4"
-      );
+      // player.value.load(
+      //   "https://assets.contentstack.io/v3/assets/bltab687eb09ed92451/blt0516a2ddf86d32f7/60256c5f5f9b2812764c3de9/levisSeasonalSample.mp4"
+      // );
+      console.log("SRC :: ", videoSrc.value);
+      player.value.load(videoSrc.value);
     }
 
     const customCueBuilder = (val) => {
@@ -172,6 +174,13 @@ export default {
         });
       }
     };
+
+    // watchers
+    watch(videoSrc, () => {
+      console.log("VIDEO SRC :: ", videoSrc.value);
+      if (player.value)
+        playVideo();
+    });
 
     // computed
     const ivsPlayerHost = computed(() => {
@@ -380,7 +389,7 @@ export default {
     }
     .product-group {
       &:nth-child(1) {
-        margin: 0 15px 0 10px;
+        margin: 0 15px 10px 10px;
         background: #ffffff;
         border-left: 4px solid #ff0101;
       }
@@ -390,11 +399,14 @@ export default {
           padding: 3px;
         }
       }
-      max-width: 320px;
-      margin: 25px 15px 0 10px;
+      min-width: 360px;
+      margin: 25px 15px 10px 10px;
       background: #ffffff;
       border-left: 4px solid #cfcfcf;
       box-shadow: 6px 6px 2px 0px #bdbdbd;
+      @media (max-width: 508px) {
+        min-width: 70vw;
+      }
     }
     ul {
       margin: 0;
