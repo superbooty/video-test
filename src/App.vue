@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <section class="header">
+      <span class="menu-cue"></span>
       <span class="menu-lbl" @click="showMenu = !showMenu">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTMgNmgtMTN2LTRoMTN2NHptMCA0aC0xM3Y0aDEzdi00em0wIDhoLTEzdjRoMTN2LTR6bTMtOGw0IDUuMDc1IDQtNS4wNzVoLTh6Ii8+PC9zdmc+">
       </span>
@@ -71,6 +72,14 @@ export default {
   height: 42px;
   font-size: 12px;
   border-bottom: 1px solid #d0d0d0;
+  .menu-cue {
+    height: 40px;
+    width: 5px;
+    background: #457dff;
+    position: absolute;
+    left: 0px;
+    top: 2px;
+  }
   .comm {
     position: absolute;
     left: 60px;
@@ -118,7 +127,7 @@ export default {
   .menu {
     position: absolute;
     top: 30px;
-    left: 12px;
+    // left: 12px;
     padding: 0px;
     width: 300px;
     padding: 5px;

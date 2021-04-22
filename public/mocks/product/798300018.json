@@ -270,39 +270,6 @@
             "url": "/apparel/clothing/bottoms/501-93-straight-mens-jeans/p/798300018"
         }
     ],
-    "galleryImageList": {
-        "galleryImage": [
-            {
-                "altText": "501® '93 Straight Men's Jeans",
-                "format": "Quickview_Desktop",
-                "galleryIndex": 0,
-                "imageType": "GALLERY",
-                "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
-            },
-            {
-                "altText": "501® '93 Straight Men's Jeans",
-                "format": "Quickview_Desktop",
-                "galleryIndex": 1,
-                "imageType": "GALLERY",
-                "url": "https://lsco.scene7.com/is/image/lsco/798300018-detail1-pdp?$qv_desktop_full$"
-            },
-            {
-                "altText": "501® '93 Straight Men's Jeans",
-                "format": "Quickview_Desktop",
-                "galleryIndex": 2,
-                "imageType": "GALLERY",
-                "url": "https://lsco.scene7.com/is/image/lsco/798300018-back-pdp?$qv_desktop_bottoms$"
-            },
-            {
-                "altText": "501® '93 Straight Men's Jeans",
-                "format": "Quickview_Desktop",
-                "galleryIndex": 3,
-                "imageType": "GALLERY",
-                "url": "https://lsco.scene7.com/is/image/lsco/798300018-side-pdp?$qv_desktop_bottoms$"
-            }
-        ],
-        "videos": null
-    },
     "images": [
         {
             "altText": "501® '93 Straight Men's Jeans",
@@ -316,21 +283,21 @@
             "format": "Quickview_Desktop",
             "galleryIndex": 1,
             "imageType": "GALLERY",
-            "url": "https://lsco.scene7.com/is/image/lsco/798300018-detail1-pdp?$qv_desktop_full$"
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
         },
         {
             "altText": "501® '93 Straight Men's Jeans",
             "format": "Quickview_Desktop",
             "galleryIndex": 2,
             "imageType": "GALLERY",
-            "url": "https://lsco.scene7.com/is/image/lsco/798300018-back-pdp?$qv_desktop_bottoms$"
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
         },
         {
             "altText": "501® '93 Straight Men's Jeans",
             "format": "Quickview_Desktop",
             "galleryIndex": 3,
             "imageType": "GALLERY",
-            "url": "https://lsco.scene7.com/is/image/lsco/798300018-side-pdp?$qv_desktop_bottoms$"
+            "url": "https://lsco.scene7.com/is/image/lsco/798300018-front-pdp?$qv_desktop_bottoms$"
         }
     ],
     "itemType": "Jeans",
