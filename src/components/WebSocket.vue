@@ -320,7 +320,7 @@ export default {
   margin-top: 10px;
   justify-content: center;
   .broadcaster {
-      flex-basis: 42vw;
+      flex-basis: 30vw;
       min-width: 476px;
       margin: 0 0 40px 0;
       text-align: left;
@@ -436,7 +436,7 @@ export default {
       }
     }
     .ws-container {
-      flex-basis: 30vw;
+      flex-basis: 48vw;
       max-height: 350px;
       min-width: 476px;
       overflow-y: auto;

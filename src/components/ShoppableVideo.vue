@@ -354,7 +354,7 @@ export default {
   }
   .video-container {
     flex: 0 0 auto;
-    flex-basis: 42vw;
+    flex-basis: 48vw;
     height: 400px;
     min-width: 476px;
     background: black;
