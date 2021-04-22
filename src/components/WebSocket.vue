@@ -436,7 +436,7 @@ export default {
       }
     }
     .ws-container {
-      flex-basis: 42vw;
+      flex-basis: 30vw;
       max-height: 350px;
       min-width: 476px;
       overflow-y: auto;
