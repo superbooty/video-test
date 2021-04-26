@@ -413,6 +413,7 @@ export default {
             width: 26px;
             border: 2px solid #e8e8e8;
             border-radius: 24px;
+            text-align: center;
           }
           list-style: none;
           padding: 0px;
