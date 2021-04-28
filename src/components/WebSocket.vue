@@ -4,15 +4,15 @@
       <div class="msg-type">
         <ul class="msg-type-list">
           <li :class="{'selected': msgComposition['images']}">
-            <svg @click="setMsgComposition('images')"
+            <svg @click="setMsgComposition('images', !msgComposition['images'])"
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 14.378l-5.641 5.64c-.654.655-1.513.982-2.374.982-2.972 0-4.493-3.613-2.374-5.731l5.539-5.54c.488-.486 1.126-.729 1.766-.729 1.494 0 2.498 1.233 2.498 2.519 0 .61-.227 1.232-.734 1.74l-4.918 4.918c-.634.634-1.665.634-2.299 0-.633-.633-.633-1.664 0-2.298l3.971-3.97.828.828-3.971 3.97c-.178.177-.178.466 0 .643s.465.177.643 0l4.919-4.918c.517-.517.517-1.357 0-1.874-.517-.517-1.356-.517-1.874 0l-5.539 5.54c-.854.853-.854 2.241 0 3.093.852.853 2.24.853 3.093 0l5.64-5.64.827.827zm-17-5.878c0-.828-.672-1.5-1.5-1.5s-1.5.672-1.5 1.5c0 .829.672 1.5 1.5 1.5s1.5-.671 1.5-1.5zm7.57 3.013l-1.57-2.513-2.52 4-2.48-1.96-4 5.96h6.694c.144-1.139.63-2.242 1.503-3.114l2.373-2.373zm-3.754 7.487h-8.816v-14h18v2.126c.299-.062.604-.096.916-.096.371 0 .732.06 1.084.147v-4.177h-22v18h11.818c-.482-.605-.818-1.283-1.002-2z"/></svg>
           </li>
           <li :class="{'selected': msgComposition['ids']}">
-            <svg @click="setMsgComposition('ids')" width="24" height="24"
+            <svg @click="setMsgComposition('ids', !msgComposition['ids'])" width="24" height="24"
               xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M7.722 19.994l2.185-3 .808.589-2.185 3-.808-.589zm6.415-3l2.185 3-.809.589-2.185-3 .809-.589zm-2.135-13.5c-.884 0-1.521-.151-1.833-.285.312-.133.949-.284 1.833-.284s1.521.151 1.833.284c-.312.134-.949.285-1.833.285m6.008 10.255l-.971.167-.016 9.084h-4.512v-18.522c1.242-.075 2.491-.435 2.491-1.269 0-.948-1.616-1.284-3-1.284s-3 .336-3 1.284c0 .838 1.261 1.197 2.509 1.27v18.521h-4.511l.017-9.082-.97-.171-2.867 7.937-1.968-.47 3.557-14.595 4.277-1.703c-1.041-.922-1.229-1.666-1.175-2.14.185-1.62 3.155-1.776 4.129-1.776.974 0 4.02.258 4.146 1.81.039.472-.047 1.184-1.236 2.078l4.343 1.731 3.54 14.597-1.952.474-2.831-7.941zm2.093-7.868l-3.432-1.368c.344-.533.522-1.179.472-1.785-.226-2.718-4.959-2.728-5.134-2.728-3.863.015-5.021 1.695-5.132 2.662-.067.593.115 1.249.497 1.843l-3.454 1.376-3.917 16.071 3.814.912 2.195-6.075-.014 7.211h12.023l.014-7.206 2.167 6.082 3.798-.926-3.897-16.069z"/></svg>
           </li>
           <li :class="{'selected': msgComposition['text']}">
-            <svg @click="setMsgComposition('text')"
+            <svg @click="setMsgComposition('text', !msgComposition['text'])"
               xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 7v10h-20v-10h20zm2-2h-24v14h24v-14zm-18 3h-3v2h3v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zm-4 6h-10v2h10v-2zm4-3h-4v2h4v-2zm-14 0h-4v2h4v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2zm3 0h-2v2h2v-2z"/></svg>
           </li>
         </ul> 
@@ -150,7 +150,7 @@ export default {
       }
     };
 
-    const setMsgComposition = (option) => {
+    const setMsgComposition = (option, value) => {
       // turn all other options off
       for (const property in msgComposition.value) {
         if (msgComposition.value[property]) {
@@ -159,7 +159,15 @@ export default {
       }
       // set the correct property
       if (option in msgComposition.value) {
-        msgComposition.value[option] = true;
+        msgComposition.value[option] = value;
+      }
+      // if all options are false default to text
+      let cumulative = false
+      for (const property in msgComposition.value) {
+        cumulative = cumulative || msgComposition.value[property];
+      }
+      if (!cumulative) {
+        msgComposition.value['text'] = true;
       }
     }
 
