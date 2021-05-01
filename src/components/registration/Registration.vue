@@ -41,7 +41,7 @@
 
 <script>
 import { ref } from "vue";
-import userState from "@/state/userState";
+import {userState} from "@/state/userState";
 
 export default {
   name: "Login",

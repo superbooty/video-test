@@ -8,7 +8,7 @@ import Registration from "../components/registration/Registration.vue";
 import ShoppableVideo from "./ShoppableVideo";
 
 import { computed} from "vue";
-import userState from "@/state/userState"
+import {userState} from "@/state/userState"
 
 
 export default {

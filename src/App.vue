@@ -22,7 +22,7 @@
 <script>
 import Event from "./components/Event.vue";
 
-import userState from "@/state/userState"
+import {appState} from "@/state/appState"
 import { ref } from "vue";
 
 export default {
@@ -33,7 +33,7 @@ export default {
 
     const showMenu = ref(false);
 
-    const {state, toggleMsgConsole} = userState();
+    const { state, toggleMsgConsole } = appState();
 
     const toggleAdmin = () => {
       toggleMsgConsole();

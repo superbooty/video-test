@@ -56,7 +56,7 @@ import VideoProductCard from "../components/shoppable/VideoProductCard.vue";
 import WebSocket from "./WebSocket.vue";
 import { loadScript } from "@/utils/loadScripts";
 import md5 from 'crypto-js/md5';
-import userState from "@/state/userState";
+import {appState} from "@/state/appState";
 
 const AddToBagModal = defineAsyncComponent(
   () => import('../components/shoppable/AddToBagModal.vue')
@@ -67,7 +67,7 @@ export default {
   setup(props) {
     console.log("Item Selector PROPS :: ", props);
 
-    const { state } = userState();
+    const { state } = appState();
 
     const scrollItemToView = ref(null);
     const videoPlayer = ref(null);

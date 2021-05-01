@@ -4,11 +4,10 @@ import {ref } from "vue";
 const state = ref({
     userName: null,
     email: null,
-    registered: false,
-    showMsgConsole: false,
+    registered: false
 });
 
-export default function userState() {
+export function userState() {
     // do the registration here
     const register = (userName, email) => {
         // check if the user has already been registered
@@ -28,12 +27,9 @@ export default function userState() {
         }
         return true;
     }
-    const toggleMsgConsole = () => {
-        // check if the user has already been registered
-        // for a real validation this would be checked via
-        // an API
-        state.value.showMsgConsole = !state.value.showMsgConsole;
-        return true;
-    }   
-    return {state, register, toggleMsgConsole}
+    return {state, register}
+}
+
+export default {
+    userState,
 }

@@ -93,7 +93,7 @@
 <script>
 
 import { ref, nextTick} from "vue";
-import userState from "@/state/userState";
+import {userState} from "@/state/userState";
 
 export default {
   props: {
