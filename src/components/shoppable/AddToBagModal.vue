@@ -115,7 +115,7 @@ export default {
     function addToBag() {
       this.atcClicked = true;
       if (selectedWaistIdx.value > -1 && selectedLengthIdx.value > -1) {
-        console.log("ADDING TO BAG :: ", `${props.code}${variants.value.variantLength[selectedLengthIdx.value]}${product.value.variantWaist[selectedWaistIdx.value]}`);
+        console.log("ADDING TO BAG :: ", `${props.code}${variants.value.variantLength[selectedLengthIdx.value]}${variants.value.variantWaist[selectedWaistIdx.value]}`);
         closeModal();
       } else if (selectedSizeIdx.value > -1) {
          console.log("ADDING TO BAG :: ", `${props.code}0${variants.value.variantSize[selectedSizeIdx.value]}`);
