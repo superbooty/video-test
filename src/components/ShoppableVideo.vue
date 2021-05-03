@@ -78,6 +78,7 @@ export default {
     const player = ref(null);
     const shoppableList = ref(null);
     const atcCode = ref(null);
+    const vttTrack = ref({});
 
     const url =
       "https://cdn.contentstack.io/v3/content_types/module_video_stream_shoppable_v1/entries?environment=example&uid=blt56bc1514958aa740";
@@ -95,34 +96,38 @@ export default {
       referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     };
 
-    fetch(url, options)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        videoSrc.value = data.entries[0].video_url;
-        videoPoster.value = data.entries[0].video_poster_url;
-        metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
-      });
+    // fetch(url, options)
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((data) => {
+    //     videoSrc.value = data.entries[0].video_url;
+    //     videoPoster.value = data.entries[0].video_poster_url;
+    //     metaFileSrc.value = data.entries[0].video_metadata_track_file.url;
+    //   });
 
-    
     Promise.all([
       fetch(url, options),
-      fetch('/video-meta/meta')
-    ]).then(function (responses) {
-      // Get a JSON object from each of the responses
-      return Promise.all(responses.map(function (response) {
-        return response.json();
-      }));
-    }).then(function (data) {
-      // Log the data to the console
-      // You would do something with both sets of data here
-      console.log(data);
-    }).catch(function (error) {
-      // if there's an error, log it
-      console.log(error);
-    });
-
+      fetch('/video-meta/meta.json')
+      ]).then(function (responses) {
+        // Get a JSON object from each of the responses
+        return Promise.all(responses.map(function (response) {
+          return response.json();
+        }));
+      }).then(function (data) {
+        // data is an array of the two fetches
+        // first is the video data
+        const vidData = data[0];
+        vttTrack.value = data[1];
+        videoSrc.value = vidData.entries[0].video_url;
+        videoPoster.value = vidData.entries[0].video_poster_url;
+        metaFileSrc.value = vidData.entries[0].video_metadata_track_file.url;
+        console.log(vttTrack.value);
+        // const videoTrack = document.querySelector("track");
+      }).catch(function (error) {
+        console.log(error);
+      });
+    
     // methods
     const codeSeen = (collectionId) => {
       return productCollection.value.find(el => {
@@ -200,6 +205,37 @@ export default {
         playVideo();
     });
 
+    watch(vttTrack, () => {
+      let video = document.querySelector('video');
+      const {vttType, vttCues} = vttTrack.value;
+      const track = video.addTextTrack(vttType);
+      vttCues.forEach(cue => {
+        const newCue = new VTTCue(cue.startTime, cue.endTime, JSON.stringify(cue.text));
+        track.addCue(newCue);
+      });
+      // handle the cue change
+      track.oncuechange = (e) => {
+        console.log(e);
+        // get the meta text
+        const meta = [...e.target.activeCues]
+          .map((t) => t.text)
+          .join(" ");
+        if (meta) {
+          const data = JSON.parse(meta);
+          const productsHash = md5(data.toString()).toString();
+          const productColl = {hash: productsHash, products: data};
+          // check if the hash is in collections array
+          if (!productCollection.value.some(e => e.hash === productsHash)) {
+            productCollection.value.unshift(productColl);
+          } else {
+            processCodeEntries(productsHash);
+            const el = shoppableList.value;
+            el.scrollTop = 0;
+          }
+        }
+      };
+    });
+
     // computed
     const ivsPlayerHost = computed(() => {
       return process.env.VUE_APP_IVS_PLAYER;
@@ -239,27 +275,7 @@ export default {
       } else {
         playVideo();
       }
-        
-      const videoTrack = document.querySelector("track");
-      videoTrack.oncuechange = (e) => {
-        // get the meta text
-        const meta = [...e.target.track.activeCues]
-          .map((t) => t.text)
-          .join(" ");
-        if (meta) {
-          const data = JSON.parse(meta);
-          const productsHash = md5(data.products.toString()).toString();
-          const productColl = {hash: productsHash, products: data.products};
-          // check if the hash is in collections array
-          if (!productCollection.value.some(e => e.hash === productsHash)) {
-            productCollection.value.unshift(productColl);
-          } else {
-            processCodeEntries(productsHash);
-            const el = shoppableList.value;
-            el.scrollTop = 0;
-          }
-        }
-      };
+      
     });
 
     return {
